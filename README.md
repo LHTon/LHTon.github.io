@@ -2,38 +2,39 @@
 
 ## 前提准备
 - 想在github上搭建自己的个人博客之前需要准备好这些工作
-    - 注册一个github账号（网上有很多教程）
-    - 创建一个仓库，仓库名格式一定是**你github上账号用户名.github.io**
-    ![1569487055_1_.jpg](https://i.loli.net/2019/09/26/TOsfRaVkr8IJH5U.png)<br />
-    这里因为这个仓库我已经创建好了，所以他会提示报错。<br />
-     ![1569487357_1_.jpg](https://i.loli.net/2019/09/26/HdyjpbcBuQDI7XE.png)<br/>
-    点击绿色按钮，就可以创建成功。
-    - 这时github识别到你建立了名为 “你的用户名”.github.io 的仓库，它会默认开启该仓库的GitHub Pages功能
-      ![68747470733a2f2f692e6c6f6c692e6e65742f323031392f30322f32332f356337306665643961353166342e6a7067.jpg](https://i.loli.net/2019/09/26/zwLGfDr7d5Kgqtn.jpg)
-    - 这时你就可以在浏览器上输入https://你的用户名.github.io/
-    - 但你访问到的页面，是空白的，因为仓库里并没有页面可以显示
+- 注册一个github账号（网上有很多教程）
+- 创建一个仓库，仓库名格式一定是**你github上账号用户名.github.io**
+![1569487055_1_.jpg](https://i.loli.net/2019/09/26/TOsfRaVkr8IJH5U.png)<br />
+这里因为这个仓库我已经创建好了，所以他会提示报错。<br />
+![1569487357_1_.jpg](https://i.loli.net/2019/09/26/HdyjpbcBuQDI7XE.png)<br/>
+点击绿色按钮，就可以创建成功。
+- 这时github识别到你建立了名为 “你的用户名”.github.io 的仓库<br />
+它会默认开启该仓库的GitHub Pages功能
+![68747470733a2f2f692e6c6f6c692e6e65742f323031392f30322f32332f356337306665643961353166342e6a7067.jpg](https://i.loli.net/2019/09/26/zwLGfDr7d5Kgqtn.jpg)
+- 这时你就可以在浏览器上输入https://你的用户名.github.io/
+- 但你访问到的页面，是空白的，因为仓库里并没有页面可以显示
 
 ## 在搭建博客Hexo之前要安装好这些
 - [git安装链接](https://www.liaoxuefeng.com/wiki/896043488029600/896067074338496)
 - [node.js安装链接](https://nodejs.org/zh-cn/download/)
 
 ## 在上面都完成后，再进行安装Hexo
-在桌面新建一个空的文件夹，然后在编译器打开控制台或者在电脑按win+r输入cmd+回车；<br />
-在控制台运行如下的命令:<br />
+- 在桌面新建一个空的文件夹，然后在编译器打开控制台或者在电脑按win+r输入cmd+回车；<br />
+- 在控制台运行如下的命令:<br />
 
 ```php
-cd hexo/                这是切到你刚刚新建的空文件目录
+cd hexo/                  这是切到你刚刚新建的空文件目录
 然后执行下面的命令:
-npm install hexo-cli -g 在全局安装 hexo-cli 包
-cd blog/                初始化 hexo 博客，blog 为创建的博客名称,转到当前的博客文件夹
-npm install             根据 package.json安装所有依赖的包
-hexo server             开启 hexo 服务
+npm install hexo-cli -g   在全局安装 hexo-cli 包
+cd blog/                  初始化 hexo 博客，blog 为创建的博客名称,转到当前的博客文件夹
+npm install               根据 package.json安装所有依赖的包
+hexo server               开启 hexo 服务
 ```
-默认的启动端口是http://localhost:4000/<br />
-将链接在浏览器打开后，你可以看到hexo为搭建的博客
+- 默认的启动端口是http://localhost:4000/<br />
+- 将链接在浏览器打开后，你可以看到hexo为搭建的博客
 ![12.jpg](https://i.loli.net/2019/09/26/F96cEQWnCZ3LIap.jpg)<br />
-这是hexo默认的主题<br />
-如果你不喜欢这个主题，你可以去Hexo的官网上找你喜欢的模板主题
+- 这是hexo默认的主题<br />
+- 如果你不喜欢这个主题，你可以去Hexo的官网上找你喜欢的模板主题
 
 ## Hexo的官网
 - http://hexo.io/themes/ 
@@ -48,15 +49,15 @@ hexo server             开启 hexo 服务
 - 接下来就按照你模板github上的README.md文件上的说明来安装并使用该模板
 
 - 按照里面的说明安装成功后，在本地控制台输入hexo server<br /> 
-然后访问http://localhost:4000可以看到你要的模板在浏览器中能显示出来了。
+然后访问 http://localhost:4000 可以看到你要的模板在浏览器中能显示出来了。<br />
 这样基本就成功了。
 
 ## 如何部署到github上？用 '你的用户名'.github.io访问
 - 首先你可以在控制台执行下面的命令
 ```php
 npm install hexo-cli -g
-hexo clean     清除缓存文件 db.json 和已生成的静态文件 public
-hexo g         会生成一个名为public的文件夹
+hexo clean                 清除缓存文件 db.json 和已生成的静态文件 public
+hexo g                     会生成一个名为public的文件夹
 ```
 - 在你安装模板文件的目录你会看到生成了一个public文件夹<br />
 - 这时你回到你github上，clone你刚刚创建的仓库到本地<br />
