@@ -23,12 +23,12 @@
 - 在控制台运行如下的命令:<br />
 
 ```php
-cd hexo/                  这是切到你刚刚新建的空文件目录
-然后执行下面的命令:
-npm install hexo-cli -g   在全局安装 hexo-cli 包
-cd blog/                  初始化 hexo 博客，blog 为创建的博客名称,转到当前的博客文件夹
-npm install               根据 package.json安装所有依赖的包
-hexo server               开启 hexo 服务
+    cd hexo/                  这是切到你刚刚新建的空文件目录
+    然后执行下面的命令:
+    npm install hexo-cli -g   在全局安装 hexo-cli 包
+    cd blog/                  初始化 hexo 博客，blog 为创建的博客名称,转到当前的博客文件夹
+    npm install               根据 package.json安装所有依赖的包
+    hexo server               开启 hexo 服务
 ```
 - 默认的启动端口是http://localhost:4000/<br />
 - 将链接在浏览器打开后，你可以看到hexo为搭建的博客
@@ -55,9 +55,9 @@ hexo server               开启 hexo 服务
 ## 如何部署到github上？用 '你的用户名'.github.io访问
 - 首先你可以在控制台执行下面的命令
 ```php
-npm install hexo-cli -g
-hexo clean                 清除缓存文件 db.json 和已生成的静态文件 public
-hexo g                     会生成一个名为public的文件夹
+    npm install hexo-cli -g
+    hexo clean                 清除缓存文件 db.json 和已生成的静态文件 public
+    hexo g                     会生成一个名为public的文件夹
 ```
 - 在你安装模板文件的目录你会看到生成了一个public文件夹<br />
 - 这时你回到你github上，clone你刚刚创建的仓库到本地<br />
