@@ -1,0 +1,599 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Head tag -->
+<head><meta name="generator" content="Hexo 3.9.0">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="google-site-verification" content="xBT4GhYoi5qRD5tr338pgPM5OWHHIDR6mNg1a3euekI">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content>
+    <meta name="keyword" content>
+    <link rel="shortcut icon" href="/img/ironman-draw.png">
+    <!-- Place this tag in your head or just before your close body tag. -->
+    <script async defer src="https://buttons.github.io/buttons.js"></script>
+    <title>
+        
+          TP5上传文件和视频 - LHTon | 个人博客
+        
+    </title>
+
+    <link rel="canonical" href="http://yoursite-url/2019/10/23/TP5上传文件/">
+
+    <!-- Bootstrap Core CSS -->
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+
+    <!-- Custom CSS --> 
+    <link rel="stylesheet" href="/css/beantech.min.css">
+    
+    <!-- Pygments Highlight CSS -->
+    <link rel="stylesheet" href="/css/highlight.css">
+
+    <link rel="stylesheet" href="/css/widget.css">
+
+    <link rel="stylesheet" href="/css/rocket.css">
+
+    <link rel="stylesheet" href="/css/signature.css">
+
+    <link rel="stylesheet" href="/css/toc.css">
+
+    <!-- Custom Fonts -->
+    <!-- <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" type="text/css"> -->
+    <!-- Hux change font-awesome CDN to qiniu -->
+    <link href="https://cdn.staticfile.org/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+
+    <!-- Hux Delete, sad but pending in China
+    <link href='http://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/
+    css'>
+    -->
+
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- ga & ba script hoook -->
+    <script></script>
+</head>
+
+
+<!-- hack iOS CSS :active style -->
+<body ontouchstart="">
+	<!-- Modified by Yu-Hsuan Yen -->
+<!-- Post Header -->
+<style type="text/css">
+    header.intro-header{
+        
+            background-image: url('2.jpg')
+            /*post*/
+        
+    }
+    
+    #signature{
+        background-image: url('/img/signature/BeanTechSign-white.png');
+    }
+    
+</style>
+
+<header class="intro-header" >
+    <!-- Signature -->
+    <div id="signature">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                
+                    <div class="post-heading">
+                        <div class="tags">
+                            
+                              <a class="tag" href="/tags/#上传文件" title="上传文件">上传文件</a>
+                            
+                              <a class="tag" href="/tags/#上传视频" title="上传视频">上传视频</a>
+                            
+                              <a class="tag" href="/tags/#TP5" title="TP5">TP5</a>
+                            
+                        </div>
+                        <h1>TP5上传文件和视频</h1>
+                        <h2 class="subheading"></h2>
+                        <span class="meta">
+                            Posted by LHTon on
+                            2019-10-23
+                        </span>
+                    </div>
+                
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+	
+    <!-- Navigation -->
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">林宏通博客</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <!-- Known Issue, found by Hux:
+            <nav>'s height woule be hold on by its content.
+            so, when navbar scale out, the <nav> will cover tags.
+            also mask any touch event of tags, unfortunately.
+        -->
+        <div id="huxblog_navbar">
+            <div class="navbar-collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="/">Home</a>
+                    </li>
+
+                    
+
+                        
+                    
+
+                        
+                        <li>
+                            <a href="/about/">About</a>
+                        </li>
+                        
+                    
+
+                        
+                        <li>
+                            <a href="/archive/">Archives</a>
+                        </li>
+                        
+                    
+
+                        
+                        <li>
+                            <a href="/tags/">Tags</a>
+                        </li>
+                        
+                    
+                    
+                </ul>
+            </div>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container -->
+</nav>
+<script>
+    // Drop Bootstarp low-performance Navbar
+    // Use customize navbar with high-quality material design animation
+    // in high-perf jank-free CSS3 implementation
+    var $body   = document.body;
+    var $toggle = document.querySelector('.navbar-toggle');
+    var $navbar = document.querySelector('#huxblog_navbar');
+    var $collapse = document.querySelector('.navbar-collapse');
+
+    $toggle.addEventListener('click', handleMagic)
+    function handleMagic(e){
+        if ($navbar.className.indexOf('in') > 0) {
+        // CLOSE
+            $navbar.className = " ";
+            // wait until animation end.
+            setTimeout(function(){
+                // prevent frequently toggle
+                if($navbar.className.indexOf('in') < 0) {
+                    $collapse.style.height = "0px"
+                }
+            },400)
+        }else{
+        // OPEN
+            $collapse.style.height = "auto"
+            $navbar.className += " in";
+        }
+    }
+</script>
+
+
+    <!-- Main Content -->
+    <!-- Modify by Yu-Hsuan Yen -->
+
+<!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
+
+            <!-- Post Container -->
+            <div class="
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                post-container">
+
+                <h1><span id="多文件上传并生成缩列图和上传视频">多文件上传并生成缩列图和上传视频</span></h1>
+<ul>
+<li>在处理缩列图时，要引入think/Image,所以在这先将这里的image文件夹和Image.php文件<br>
+<img src="https://i.loli.net/2019/10/24/toe2DW9n7YXfdlb.png" alt="1571888203_1_.jpg"></li>
+<li>剪切到thinkphp/library/think/里面，如下图：<br>
+<img src="https://i.loli.net/2019/10/24/pA7jeCHkRdg6WTK.png" alt="1571888873_1_.jpg"></li>
+<li>接下来是写代码</li>
+<li>处理上传视频和上传文件的接口</li>
+</ul>
+<h3><span id="方法一将图片和视频保存在七牛云上">方法一将图片和视频保存在七牛云上</span></h3>
+<ul>
+<li>
+<p>并且生成视频的封面</p>
+</li>
+<li>
+<p>前提准备</p>
+</li>
+<li>
+<p>在七牛云上注册一个账号</p>
+</li>
+<li>
+<p>创建对象储存，如下图：具体的操作可以根据七牛云上官网文档上操作<br>
+<img src="https://i.loli.net/2019/10/24/JdFHbqIwl94vkiD.png" alt="1571906102_1_.jpg"></p>
+</li>
+<li>
+<p>下载phpsdk包<br>
+<img src="https://i.loli.net/2019/10/24/5Nh23EGqankyV9o.png" alt="1571906727_1_.jpg"></p>
+</li>
+<li>
+<p>将下载好的包放在extend里面<br>
+<img src="https://i.loli.net/2019/10/24/VwrK8lj4YWg29vF.png" alt="1571906890_1_.jpg"></p>
+</li>
+<li>
+<p>在写代码时等等需要配置七牛云上的密钥，AccessKey/SecretKey</p>
+</li>
+<li>
+<p>在你创建对象存储空间后，点击个人中心，点击密钥管理，后，就可以看到你需要的密钥，如下图：<br>
+<img src="https://i.loli.net/2019/10/24/aOrZjVGsXtB4o9I.png" alt="1571908060_1_.jpg"></p>
+</li>
+</ul>
+<h3><span id="代码的实现">代码的实现</span></h3>
+<ul>
+<li>创建一个控制器，up.php</li>
+</ul>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line"><span class="keyword">namespace</span> <span class="title">app</span>\<span class="title">home</span>\<span class="title">controller</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">use</span> <span class="title">think</span>\<span class="title">Controller</span>;</span><br><span class="line"><span class="keyword">use</span> <span class="title">Qiniu</span>\<span class="title">Auth</span>;</span><br><span class="line"><span class="keyword">use</span> <span class="title">Qiniu</span>\<span class="title">Storage</span>\<span class="title">BucketManager</span>;</span><br><span class="line"><span class="keyword">use</span> <span class="title">Qiniu</span>\<span class="title">Storage</span>\<span class="title">UploadManager</span>;</span><br><span class="line"><span class="keyword">use</span> <span class="title">think</span>\<span class="title">Request</span>;</span><br><span class="line"><span class="keyword">use</span> <span class="title">think</span>\<span class="title">Loader</span>;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Up</span> <span class="keyword">extends</span> <span class="title">Controller</span></span></span><br><span class="line"><span class="class"></span>&#123;</span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 将图片储存在七牛云上</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">index</span><span class="params">(Request $request)</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">         <span class="keyword">if</span>(request()-&gt;isPost()) &#123;</span><br><span class="line">             $file = request()-&gt;file(<span class="string">'image'</span>);</span><br><span class="line">             <span class="comment">// 要上传图片的本地路径</span></span><br><span class="line">             $filePath = $file-&gt;getRealPath();</span><br><span class="line">             $ext = pathinfo($file-&gt;getInfo(<span class="string">'name'</span>), PATHINFO_EXTENSION);  <span class="comment">//后缀</span></span><br><span class="line">             <span class="comment">//获取当前控制器名称</span></span><br><span class="line">             <span class="comment">//$controllerName=$this-&gt;getContro();</span></span><br><span class="line">             <span class="comment">// 上传到七牛后保存的文件名</span></span><br><span class="line">             $key = substr(md5($file-&gt;getRealPath()), <span class="number">0</span>, <span class="number">5</span>) . time() . <span class="string">'.'</span> . $ext;</span><br><span class="line">             <span class="comment">//引入phpsdk包</span></span><br><span class="line">             Loader::import(<span class="string">'phpsdk.autoload'</span>,EXTEND_PATH);</span><br><span class="line">             <span class="comment">// 需要填写你在七牛云上的 Access Key 和 Secret Key</span></span><br><span class="line">             $accessKey = <span class="string">'HQGQglK3BL_-9p_BbrDh3dL7ng5fW8IxOiGX8gnA'</span>;</span><br><span class="line">             $secretKey = <span class="string">'HQPkbjauhrn_pqR1qPy-brs5GOsZYgC7wHywiaUV'</span>;</span><br><span class="line">             <span class="comment">// 构建鉴权对象</span></span><br><span class="line">             $auth = <span class="keyword">new</span> Auth($accessKey, $secretKey);</span><br><span class="line">             <span class="comment">// 要上传的空间</span></span><br><span class="line">             $bucket = <span class="string">'weices'</span>;</span><br><span class="line">             $domain = <span class="string">'weices.s3-cn-east-1.qiniucs.com'</span>;</span><br><span class="line">             $token = $auth-&gt;uploadToken($bucket);</span><br><span class="line">             <span class="comment">// 初始化 UploadManager 对象并进行文件的上传</span></span><br><span class="line">             $uploadMgr = <span class="keyword">new</span> UploadManager();</span><br><span class="line">             <span class="comment">//dump($uploadMgr);exit;</span></span><br><span class="line">             <span class="comment">// 调用 UploadManager 的 putFile 方法进行文件的上传</span></span><br><span class="line">             <span class="keyword">list</span>($ret, $err) = $uploadMgr-&gt;putFile($token, $key, $filePath);</span><br><span class="line">             <span class="keyword">if</span> ($err !== <span class="keyword">null</span>) &#123;</span><br><span class="line">                 <span class="keyword">return</span> [<span class="string">"err"</span> =&gt; <span class="number">1</span>, <span class="string">"msg"</span> =&gt; $err, <span class="string">"data"</span> =&gt; <span class="string">""</span>];</span><br><span class="line">             &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                 <span class="comment">//返回图片的完整URL</span></span><br><span class="line">                 <span class="keyword">return</span> json([<span class="string">"err"</span> =&gt; <span class="number">0</span>, <span class="string">"msg"</span> =&gt; <span class="string">"上传完成"</span>, <span class="string">"data"</span> =&gt;<span class="string">'pxjkvuz0y.bkt.clouddn.com/'</span> . $ret[<span class="string">'key'</span>]]);</span><br><span class="line">             &#125;</span><br><span class="line">         &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 将视频储存在七牛云上，并获取到视频的截图</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">upload</span><span class="params">()</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        <span class="comment">//引入phpsdk包</span></span><br><span class="line">        Loader::import(<span class="string">'phpsdk.autoload'</span>,EXTEND_PATH);</span><br><span class="line">        $data = input(<span class="string">'post.'</span>);</span><br><span class="line">        </span><br><span class="line">        <span class="comment">// 需要填写你在七牛云上的 Access Key 和 Secret Key</span></span><br><span class="line">        $accessKey = <span class="string">'HQGQglK3BL_-9p_BbrDh3dL7ng5fW8IxOiGX8gnA'</span>;</span><br><span class="line">        $secretKey = <span class="string">'HQPkbjauhrn_pqR1qPy-brs5GOsZYgC7wHywiaUV'</span>;</span><br><span class="line">        $auth = <span class="keyword">new</span> Auth($accessKey, $secretKey);  <span class="comment">//实例化</span></span><br><span class="line">        $bucket=<span class="string">'weices'</span>;<span class="comment">//在七牛云上创建的存储空间</span></span><br><span class="line">        $token = $auth-&gt;uploadToken($bucket);</span><br><span class="line">        $uploadMgr = <span class="keyword">new</span> UploadManager();</span><br><span class="line">        $filePath = $_FILES[<span class="string">'video'</span>][<span class="string">'tmp_name'</span>];<span class="comment">//'./php-logo.png';  //接收图片信息</span></span><br><span class="line">        <span class="keyword">if</span>($_FILES[<span class="string">'video'</span>][<span class="string">'type'</span>]==<span class="string">'video/mp4'</span>)&#123;</span><br><span class="line">            $key = <span class="string">'video'</span>.time().<span class="string">'.mp4'</span>;</span><br><span class="line">        &#125;<span class="keyword">elseif</span>($_FILES[<span class="string">'video'</span>][<span class="string">'type'</span>]==<span class="string">'audio/mp3'</span>)&#123;</span><br><span class="line">            $key = <span class="string">'audio'</span>.time().<span class="string">'.mp3'</span>;</span><br><span class="line">        &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">            $key = <span class="string">'png'</span>.time().<span class="string">'.png'</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">list</span>($ret, $err) = $uploadMgr-&gt;putFile($token, $key, $filePath);</span><br><span class="line">        <span class="comment">//视频封面的路径</span></span><br><span class="line">        $vpic = <span class="string">'http://pxjkvuz0y.bkt.clouddn.com/'</span> . $key.<span class="string">'?vframe/jpg/offset/1'</span>;</span><br><span class="line">        <span class="comment">//视频的路径</span></span><br><span class="line">        $path =<span class="string">'http://pxjkvuz0y.bkt.clouddn.com/'</span> . $ret[<span class="string">'key'</span>];</span><br><span class="line">        <span class="keyword">if</span> ($err !== <span class="keyword">null</span>) &#123;</span><br><span class="line">            <span class="keyword">echo</span> <span class="string">'上传失败'</span>;</span><br><span class="line">        &#125; <span class="keyword">else</span>&#123;</span><br><span class="line">           <span class="keyword">echo</span> <span class="number">1</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">//将数据存入数据库</span></span><br><span class="line">        $routeid = time().rand(<span class="number">1</span>,<span class="number">10000</span>);</span><br><span class="line">        $describes = [</span><br><span class="line">            <span class="string">'idx_dynamic'</span> =&gt; $routeid,</span><br><span class="line">            <span class="string">'openid'</span>     =&gt; $data[<span class="string">'openid'</span>],</span><br><span class="line">            <span class="string">'describes'</span>  =&gt; $data[<span class="string">'describes'</span>],</span><br><span class="line">            <span class="string">'idx_tabs'</span>   =&gt; $data[<span class="string">'idx_tabs'</span>],</span><br><span class="line">            <span class="string">'type'</span>       =&gt; <span class="number">1</span></span><br><span class="line"><span class="comment">//</span></span><br><span class="line">        ];</span><br><span class="line">        $res = model(<span class="string">'Dynamic'</span>) -&gt; add($describes);</span><br><span class="line">        <span class="keyword">if</span>($res) &#123;</span><br><span class="line">            <span class="keyword">echo</span> <span class="string">'添加描述成功'</span>;</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            <span class="keyword">echo</span> <span class="string">'添加描述失败'</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        $da = [</span><br><span class="line">            <span class="string">'route_dy_id'</span> =&gt; $routeid,</span><br><span class="line">            <span class="string">'route'</span>       =&gt; $path,</span><br><span class="line">            <span class="string">'thumb_route'</span> =&gt; $vpic</span><br><span class="line">        ];</span><br><span class="line">        $se = model(<span class="string">'Route'</span>)-&gt;add($da);</span><br><span class="line">        <span class="keyword">if</span>($se) &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3><span id="方法二视频和图片是保存在本地的">方法二视频和图片是保存在本地的</span></h3>
+<ul>
+<li>在控制器里新建一个Upload.php文件</li>
+</ul>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br><span class="line">167</span><br><span class="line">168</span><br><span class="line">169</span><br><span class="line">170</span><br><span class="line">171</span><br><span class="line">172</span><br><span class="line">173</span><br><span class="line">174</span><br><span class="line">175</span><br><span class="line">176</span><br><span class="line">177</span><br><span class="line">178</span><br><span class="line">179</span><br><span class="line">180</span><br><span class="line">181</span><br><span class="line">182</span><br><span class="line">183</span><br><span class="line">184</span><br><span class="line">185</span><br><span class="line">186</span><br><span class="line">187</span><br><span class="line">188</span><br><span class="line">189</span><br><span class="line">190</span><br><span class="line">191</span><br><span class="line">192</span><br><span class="line">193</span><br><span class="line">194</span><br><span class="line">195</span><br><span class="line">196</span><br><span class="line">197</span><br><span class="line">198</span><br><span class="line">199</span><br><span class="line">200</span><br><span class="line">201</span><br><span class="line">202</span><br><span class="line">203</span><br><span class="line">204</span><br><span class="line">205</span><br><span class="line">206</span><br><span class="line">207</span><br><span class="line">208</span><br><span class="line">209</span><br><span class="line">210</span><br><span class="line">211</span><br><span class="line">212</span><br><span class="line">213</span><br><span class="line">214</span><br><span class="line">215</span><br><span class="line">216</span><br><span class="line">217</span><br><span class="line">218</span><br><span class="line">219</span><br><span class="line">220</span><br><span class="line">221</span><br><span class="line">222</span><br><span class="line">223</span><br><span class="line">224</span><br><span class="line">225</span><br><span class="line">226</span><br><span class="line">227</span><br><span class="line">228</span><br><span class="line">229</span><br><span class="line">230</span><br><span class="line">231</span><br><span class="line">232</span><br><span class="line">233</span><br><span class="line">234</span><br><span class="line">235</span><br><span class="line">236</span><br><span class="line">237</span><br><span class="line">238</span><br><span class="line">239</span><br><span class="line">240</span><br><span class="line">241</span><br><span class="line">242</span><br><span class="line">243</span><br><span class="line">244</span><br><span class="line">245</span><br><span class="line">246</span><br><span class="line">247</span><br><span class="line">248</span><br><span class="line">249</span><br><span class="line">250</span><br><span class="line">251</span><br><span class="line">252</span><br><span class="line">253</span><br><span class="line">254</span><br><span class="line">255</span><br><span class="line">256</span><br><span class="line">257</span><br><span class="line">258</span><br><span class="line">259</span><br><span class="line">260</span><br><span class="line">261</span><br><span class="line">262</span><br><span class="line">263</span><br><span class="line">264</span><br><span class="line">265</span><br><span class="line">266</span><br><span class="line">267</span><br><span class="line">268</span><br><span class="line">269</span><br><span class="line">270</span><br><span class="line">271</span><br><span class="line">272</span><br><span class="line">273</span><br><span class="line">274</span><br><span class="line">275</span><br><span class="line">276</span><br><span class="line">277</span><br><span class="line">278</span><br><span class="line">279</span><br><span class="line">280</span><br><span class="line">281</span><br><span class="line">282</span><br><span class="line">283</span><br><span class="line">284</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * Created by PhpStorm.</span></span><br><span class="line"><span class="comment"> * User: LHTon</span></span><br><span class="line"><span class="comment"> * Date: 2019/8/9</span></span><br><span class="line"><span class="comment"> * Time: 23:34</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">namespace</span> <span class="title">app</span>\<span class="title">home</span>\<span class="title">controller</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">use</span> <span class="title">think</span>\<span class="title">Controller</span>;</span><br><span class="line"><span class="keyword">use</span> <span class="title">think</span>\<span class="title">Db</span>;</span><br><span class="line"><span class="keyword">use</span> <span class="title">think</span>\<span class="title">Request</span>;</span><br><span class="line"><span class="keyword">use</span> <span class="title">think</span>\<span class="title">Image</span>;</span><br><span class="line"><span class="keyword">use</span> <span class="title">app</span>\<span class="title">home</span>\<span class="title">model</span>\<span class="title">Route</span> <span class="title">as</span> <span class="title">RouteModel</span>;</span><br><span class="line"><span class="keyword">use</span> <span class="title">think</span>\<span class="title">Loader</span>;</span><br><span class="line"><span class="keyword">use</span> <span class="title">Qiniu</span>\<span class="title">Auth</span>;</span><br><span class="line"><span class="keyword">use</span> <span class="title">Qiniu</span>\<span class="title">Storage</span>\<span class="title">UploadManager</span>;</span><br><span class="line"><span class="keyword">use</span> <span class="title">Qiniu</span>\<span class="title">Storage</span>\<span class="title">BucketManager</span>;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Upload</span> <span class="keyword">extends</span> <span class="title">Controller</span></span></span><br><span class="line"><span class="class"></span>&#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">index</span><span class="params">(Request $request)</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        <span class="comment">//允许异步请求</span></span><br><span class="line">        header(<span class="string">'Access-Control-Allow-Origin: *'</span>);</span><br><span class="line">        <span class="comment">//接收前端传过来的信息与文件</span></span><br><span class="line">        $data = input(<span class="string">'post.'</span>);</span><br><span class="line">        $file = request()-&gt;file(<span class="string">'video'</span>);</span><br><span class="line">        $files = request()-&gt;file(<span class="string">'image'</span>);</span><br><span class="line">        <span class="comment">//判断文件是视频还是图片，分别进行处理</span></span><br><span class="line">        <span class="keyword">if</span> ($file) &#123;</span><br><span class="line">            <span class="comment">//将视频储存在本地上的</span></span><br><span class="line">            $filePath = <span class="string">"V"</span>;</span><br><span class="line">            <span class="comment">//视频存放的路径</span></span><br><span class="line">            $filePaths = ROOT_PATH . <span class="string">'public'</span> . DS . <span class="string">'uploads'</span> . DS . $filePath;</span><br><span class="line">            <span class="comment">//如果该文件夹不存在，则创建文件夹</span></span><br><span class="line">            <span class="keyword">if</span> (!file_exists($filePaths)) &#123;</span><br><span class="line">                mkdir($filePaths, <span class="number">0777</span>, <span class="keyword">true</span>);</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="comment">//校验，设置允许视频上传的大小，格式，然后将视频存放到，上面创建的路径里面</span></span><br><span class="line">            $info = $file-&gt;validate([<span class="string">'size'</span>=&gt;<span class="number">104857600</span>,<span class="string">'ext'</span>=&gt;<span class="string">'svg,mp4'</span>])-&gt;move($filePaths);</span><br><span class="line">            <span class="keyword">if</span> ($info) &#123;</span><br><span class="line">                <span class="comment">//存放视频的路径</span></span><br><span class="line">                $viopath = <span class="string">'uploads/'</span> . $filePath . <span class="string">'/'</span> . $getSaveName = str_replace(<span class="string">"\\"</span>, <span class="string">"/"</span>, $info-&gt;getSaveName());</span><br><span class="line">                $re = <span class="string">'http://weicess.com/weice/public/'</span> . $viopath;</span><br><span class="line">                <span class="comment">//将接受的信息和存放视频的路径存入数据库</span></span><br><span class="line">                $routeid = time().rand(<span class="number">1</span>,<span class="number">10000</span>);</span><br><span class="line">                $describes = [</span><br><span class="line">                    <span class="string">'idx_dynamic'</span> =&gt; $routeid,</span><br><span class="line">                    <span class="string">'openid'</span>     =&gt; $data[<span class="string">'openid'</span>],</span><br><span class="line">                    <span class="string">'describes'</span>  =&gt; $data[<span class="string">'describes'</span>],</span><br><span class="line">                    <span class="string">'idx_tabs'</span>   =&gt; $data[<span class="string">'idx_tabs'</span>],</span><br><span class="line">                    <span class="string">'type'</span>       =&gt; <span class="number">1</span></span><br><span class="line">                ];</span><br><span class="line">                $res = model(<span class="string">'Dynamic'</span>) -&gt; add($describes);</span><br><span class="line">                <span class="keyword">if</span>($res) &#123;</span><br><span class="line">                    <span class="keyword">echo</span> <span class="string">'添加描述成功'</span>;</span><br><span class="line">                &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                    <span class="keyword">echo</span> <span class="string">'添加描述失败'</span>;</span><br><span class="line">                &#125;</span><br><span class="line">                $da = [</span><br><span class="line">                    <span class="string">'route_dy_id'</span> =&gt; $routeid,</span><br><span class="line">                    <span class="string">'route'</span>       =&gt; $re,</span><br><span class="line">                ];</span><br><span class="line">                $se = model(<span class="string">'Route'</span>)-&gt;add($da);</span><br><span class="line">                <span class="keyword">if</span>($se) &#123;</span><br><span class="line">                    <span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">                &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">                &#125;</span><br><span class="line"></span><br><span class="line">            &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                <span class="comment">// 上传失败获取错误信息</span></span><br><span class="line">                <span class="keyword">return</span> $file-&gt;getError();</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">//如接受的文件是图片</span></span><br><span class="line">        <span class="keyword">if</span>($files)</span><br><span class="line">        &#123;</span><br><span class="line">            $filePath = <span class="string">"T"</span>;</span><br><span class="line">            <span class="comment">//统计一下有多少张图片</span></span><br><span class="line">            $toutle = count($files);</span><br><span class="line">            <span class="comment">//将文件放进循环</span></span><br><span class="line">            <span class="keyword">foreach</span> ($files <span class="keyword">as</span> $file) &#123;</span><br><span class="line">                <span class="keyword">if</span> ($file) &#123;</span><br><span class="line">                    <span class="comment">//创建存放图片的文件夹</span></span><br><span class="line">                    $filePaths = ROOT_PATH . <span class="string">'public'</span> . DS . <span class="string">'uploads'</span> . DS . $filePath;</span><br><span class="line">                    <span class="keyword">if</span> (!file_exists($filePaths)) &#123;</span><br><span class="line">                        mkdir($filePaths, <span class="number">0777</span>, <span class="keyword">true</span>);</span><br><span class="line">                    &#125;</span><br><span class="line">                    <span class="comment">//将接受的图片，存到刚刚创建文件夹里面</span></span><br><span class="line">                    $info = $file-&gt;move($filePaths);</span><br><span class="line">                    <span class="keyword">if</span> ($info) &#123;</span><br><span class="line">                        <span class="comment">//存放图片的路径</span></span><br><span class="line">                        $imgpath = <span class="string">'uploads/'</span> . $filePath . <span class="string">'/'</span> . $getSaveName = str_replace(<span class="string">"\\"</span>,<span class="string">"/"</span>,$info-&gt;getSaveName());</span><br><span class="line">                        <span class="comment">//引入Image包，处理缩略图</span></span><br><span class="line">                        $image = \think\Image::open($imgpath);</span><br><span class="line">                        <span class="comment">//创建存放缩略图的文件夹</span></span><br><span class="line">                        $date_path = <span class="string">'uploads/'</span> . $filePath . <span class="string">'/thumb/'</span> . date(<span class="string">'Ymd'</span>);</span><br><span class="line">                        <span class="keyword">if</span> (!file_exists($date_path)) &#123;</span><br><span class="line">                            mkdir($date_path, <span class="number">0777</span>, <span class="keyword">true</span>);</span><br><span class="line">                        &#125;</span><br><span class="line">                        <span class="comment">//存放缩略图的路径</span></span><br><span class="line">                        $thumb_path = $date_path . <span class="string">'/'</span> . $info-&gt;getFilename();</span><br><span class="line">                        <span class="comment">//设置缩略图的尺寸，和缩略的方式</span></span><br><span class="line">                        $image-&gt;thumb(<span class="number">110</span>, <span class="number">110</span>, Image::THUMB_CENTER)-&gt;save($thumb_path);</span><br><span class="line">                        <span class="comment">//图片的路径</span></span><br><span class="line">                        $re[] = <span class="string">'http://weicess.com/weice/public/'</span>.$imgpath;</span><br><span class="line">                        $se[] = <span class="string">'http://weicess.com/weice/public/'</span>.$thumb_path;</span><br><span class="line">                    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                        <span class="comment">// 上传失败获取错误信息</span></span><br><span class="line">                        <span class="keyword">return</span> $file-&gt;getError();</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">            </span><br><span class="line">            <span class="comment">//将接收的信息和图片都存入数据库</span></span><br><span class="line">            $dt = time().rand(<span class="number">1</span>,<span class="number">10000</span>);</span><br><span class="line">            <span class="comment">//将描述存入到描述表中</span></span><br><span class="line">            $describes = [</span><br><span class="line">                <span class="string">'idx_dynamic'</span> =&gt; $dt,</span><br><span class="line">                <span class="string">'openid'</span>     =&gt; $data[<span class="string">'openid'</span>],</span><br><span class="line">                <span class="string">'describes'</span>  =&gt; $data[<span class="string">'describes'</span>],</span><br><span class="line">                <span class="string">'albumid'</span>    =&gt; $data[<span class="string">'albumid'</span>],</span><br><span class="line">                <span class="string">'idx_tabs'</span>   =&gt; $data[<span class="string">'idx_tabs'</span>]</span><br><span class="line"></span><br><span class="line">            ];</span><br><span class="line">            $res = model(<span class="string">'Dynamic'</span>) -&gt; add($describes);</span><br><span class="line">            <span class="keyword">if</span>($res) &#123;</span><br><span class="line">                <span class="keyword">echo</span> <span class="string">'添加描述成功'</span>;</span><br><span class="line">            &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                <span class="keyword">echo</span> <span class="string">'添加描述失败'</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="comment">//图片存入资源表中</span></span><br><span class="line">            <span class="keyword">switch</span>($toutle)&#123;</span><br><span class="line">                <span class="keyword">case</span> <span class="number">1</span>:&#123;</span><br><span class="line">                    $route = <span class="keyword">new</span> RouteModel();</span><br><span class="line">                    $data = [</span><br><span class="line">                        [<span class="string">"route_dy_id"</span> =&gt; $dt, <span class="string">"route"</span> =&gt; $re[<span class="number">0</span>],<span class="string">"thumb_route"</span>=&gt; $se[<span class="number">0</span>]]</span><br><span class="line">                    ];</span><br><span class="line">                    $result = $route-&gt;saveAll($data);</span><br><span class="line">                    <span class="keyword">if</span>($result) &#123;</span><br><span class="line">                        <span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">                    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                        <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;;<span class="keyword">break</span>;</span><br><span class="line">                <span class="keyword">case</span> <span class="number">2</span>:&#123;</span><br><span class="line">                    $route = <span class="keyword">new</span> RouteModel();</span><br><span class="line">                    $data = [</span><br><span class="line">                        [<span class="string">"route_dy_id"</span> =&gt; $dt, <span class="string">"route"</span> =&gt; $re[<span class="number">0</span>], <span class="string">"thumb_route"</span> =&gt; $se[<span class="number">0</span>]],</span><br><span class="line">                        [<span class="string">"route_dy_id"</span> =&gt; $dt, <span class="string">"route"</span> =&gt; $re[<span class="number">1</span>],<span class="string">"thumb_route"</span>=&gt;$se[<span class="number">1</span>]]</span><br><span class="line">                    ];</span><br><span class="line">                    $result = $route-&gt;saveAll($data);</span><br><span class="line">                    <span class="keyword">if</span>($result) &#123;</span><br><span class="line">                        <span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">                    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                        <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;;<span class="keyword">break</span>;</span><br><span class="line">                <span class="keyword">case</span> <span class="number">3</span>:&#123;</span><br><span class="line">                    $route = <span class="keyword">new</span> RouteModel();</span><br><span class="line">                    $data = [</span><br><span class="line">                        [<span class="string">"route_dy_id"</span> =&gt; $dt, <span class="string">"route"</span> =&gt; $re[<span class="number">0</span>],<span class="string">"thumb_route"</span>=&gt;$se[<span class="number">0</span>]],</span><br><span class="line">                        [<span class="string">"route_dy_id"</span> =&gt; $dt, <span class="string">"route"</span> =&gt; $re[<span class="number">1</span>],<span class="string">"thumb_route"</span>=&gt;$se[<span class="number">1</span>]],</span><br><span class="line">                        [<span class="string">"route_dy_id"</span> =&gt; $dt, <span class="string">"route"</span> =&gt; $re[<span class="number">2</span>],<span class="string">"thumb_route"</span>=&gt;$se[<span class="number">2</span>]]</span><br><span class="line">                    ];</span><br><span class="line">                    $result = $route-&gt;saveAll($data);</span><br><span class="line">                    <span class="keyword">if</span>($result) &#123;</span><br><span class="line">                        <span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">                    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                        <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;;<span class="keyword">break</span>;</span><br><span class="line">                <span class="keyword">case</span> <span class="number">4</span>:&#123;</span><br><span class="line">                    $route = <span class="keyword">new</span> RouteModel();</span><br><span class="line">                    $data = [</span><br><span class="line">                        [<span class="string">"route_dy_id"</span> =&gt; $dt, <span class="string">"route"</span> =&gt; $re[<span class="number">0</span>],<span class="string">"thumb_route"</span>=&gt;$se[<span class="number">0</span>]],</span><br><span class="line">                        [<span class="string">"route_dy_id"</span> =&gt; $dt, <span class="string">"route"</span> =&gt; $re[<span class="number">1</span>],<span class="string">"thumb_route"</span>=&gt;$se[<span class="number">1</span>]],</span><br><span class="line">                        [<span class="string">"route_dy_id"</span> =&gt; $dt, <span class="string">"route"</span> =&gt; $re[<span class="number">2</span>],<span class="string">"thumb_route"</span>=&gt;$se[<span class="number">2</span>]],</span><br><span class="line">                        [<span class="string">"route_dy_id"</span> =&gt; $dt, <span class="string">"route"</span> =&gt; $re[<span class="number">3</span>],<span class="string">"thumb_route"</span>=&gt;$se[<span class="number">3</span>]]</span><br><span class="line">                    ];</span><br><span class="line">                    $result = $route-&gt;saveAll($data);</span><br><span class="line">                    <span class="keyword">if</span>($result) &#123;</span><br><span class="line">                        <span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">                    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                        <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;;<span class="keyword">break</span>;</span><br><span class="line">                <span class="keyword">case</span> <span class="number">5</span>:&#123;</span><br><span class="line">                    $route = <span class="keyword">new</span> RouteModel();</span><br><span class="line">                    $data = [</span><br><span class="line">                        [<span class="string">"route_dy_id"</span> =&gt; $dt, <span class="string">"route"</span> =&gt; $re[<span class="number">0</span>],<span class="string">"thumb_route"</span>=&gt;$se[<span class="number">0</span>]],</span><br><span class="line">                        [<span class="string">"route_dy_id"</span> =&gt; $dt, <span class="string">"route"</span> =&gt; $re[<span class="number">1</span>],<span class="string">"thumb_route"</span>=&gt;$se[<span class="number">1</span>]],</span><br><span class="line">                        [<span class="string">"route_dy_id"</span> =&gt; $dt, <span class="string">"route"</span> =&gt; $re[<span class="number">2</span>],<span class="string">"thumb_route"</span>=&gt;$se[<span class="number">2</span>]],</span><br><span class="line">                        [<span class="string">"route_dy_id"</span> =&gt; $dt, <span class="string">"route"</span> =&gt; $re[<span class="number">3</span>],<span class="string">"thumb_route"</span>=&gt;$se[<span class="number">3</span>]],</span><br><span class="line">                        [<span class="string">"route_dy_id"</span> =&gt; $dt, <span class="string">"route"</span> =&gt; $re[<span class="number">4</span>],<span class="string">"thumb_route"</span>=&gt;$se[<span class="number">4</span>]]</span><br><span class="line">                    ];</span><br><span class="line">                    $result = $route-&gt;saveAll($data);</span><br><span class="line">                    <span class="keyword">if</span>($result) &#123;</span><br><span class="line">                        <span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">                    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                        <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;;<span class="keyword">break</span>;</span><br><span class="line">                <span class="keyword">case</span> <span class="number">6</span>:&#123;</span><br><span class="line">                    $route = <span class="keyword">new</span> RouteModel();</span><br><span class="line">                    $data = [</span><br><span class="line">                        [<span class="string">"route_dy_id"</span> =&gt; $dt, <span class="string">"route"</span> =&gt; $re[<span class="number">0</span>],<span class="string">"thumb_route"</span>=&gt;$se[<span class="number">0</span>]],</span><br><span class="line">                        [<span class="string">"route_dy_id"</span> =&gt; $dt, <span class="string">"route"</span> =&gt; $re[<span class="number">1</span>],<span class="string">"thumb_route"</span>=&gt;$se[<span class="number">1</span>]],</span><br><span class="line">                        [<span class="string">"route_dy_id"</span> =&gt; $dt, <span class="string">"route"</span> =&gt; $re[<span class="number">2</span>],<span class="string">"thumb_route"</span>=&gt;$se[<span class="number">2</span>]],</span><br><span class="line">                        [<span class="string">"route_dy_id"</span> =&gt; $dt, <span class="string">"route"</span> =&gt; $re[<span class="number">3</span>],<span class="string">"thumb_route"</span>=&gt;$se[<span class="number">3</span>]],</span><br><span class="line">                        [<span class="string">"route_dy_id"</span> =&gt; $dt, <span class="string">"route"</span> =&gt; $re[<span class="number">4</span>],<span class="string">"thumb_route"</span>=&gt;$se[<span class="number">4</span>]],</span><br><span class="line">                        [<span class="string">"route_dy_id"</span> =&gt; $dt, <span class="string">"route"</span> =&gt; $re[<span class="number">5</span>],<span class="string">"thumb_route"</span>=&gt;$se[<span class="number">5</span>]]</span><br><span class="line">                    ];</span><br><span class="line">                    $result = $route-&gt;saveAll($data);</span><br><span class="line">                    <span class="keyword">if</span>($result) &#123;</span><br><span class="line">                        <span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">                    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                        <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;;<span class="keyword">break</span>;</span><br><span class="line">                <span class="keyword">case</span> <span class="number">7</span>:&#123;</span><br><span class="line">                    $route = <span class="keyword">new</span> RouteModel();</span><br><span class="line">                    $data = [</span><br><span class="line">                        [<span class="string">"route_dy_id"</span> =&gt; $dt, <span class="string">"route"</span> =&gt; $re[<span class="number">0</span>],<span class="string">"thumb_route"</span>=&gt;$se[<span class="number">0</span>]],</span><br><span class="line">                        [<span class="string">"route_dy_id"</span> =&gt; $dt, <span class="string">"route"</span> =&gt; $re[<span class="number">1</span>],<span class="string">"thumb_route"</span>=&gt;$se[<span class="number">1</span>]],</span><br><span class="line">                        [<span class="string">"route_dy_id"</span> =&gt; $dt, <span class="string">"route"</span> =&gt; $re[<span class="number">2</span>],<span class="string">"thumb_route"</span>=&gt;$se[<span class="number">2</span>]],</span><br><span class="line">                        [<span class="string">"route_dy_id"</span> =&gt; $dt, <span class="string">"route"</span> =&gt; $re[<span class="number">3</span>],<span class="string">"thumb_route"</span>=&gt;$se[<span class="number">3</span>]],</span><br><span class="line">                        [<span class="string">"route_dy_id"</span> =&gt; $dt, <span class="string">"route"</span> =&gt; $re[<span class="number">4</span>],<span class="string">"thumb_route"</span>=&gt;$se[<span class="number">4</span>]],</span><br><span class="line">                        [<span class="string">"route_dy_id"</span> =&gt; $dt, <span class="string">"route"</span> =&gt; $re[<span class="number">5</span>],<span class="string">"thumb_route"</span>=&gt;$se[<span class="number">5</span>]],</span><br><span class="line">                        [<span class="string">"route_dy_id"</span> =&gt; $dt, <span class="string">"route"</span> =&gt; $re[<span class="number">6</span>],<span class="string">"thumb_route"</span>=&gt;$se[<span class="number">6</span>]]</span><br><span class="line">                    ];</span><br><span class="line">                    $result = $route-&gt;saveAll($data);</span><br><span class="line">                    <span class="keyword">if</span>($result) &#123;</span><br><span class="line">                        <span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">                    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                        <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;;<span class="keyword">break</span>;</span><br><span class="line">                <span class="keyword">case</span> <span class="number">8</span>:&#123;</span><br><span class="line">                    $route = <span class="keyword">new</span> RouteModel();</span><br><span class="line">                    $data = [</span><br><span class="line">                        [<span class="string">"route_dy_id"</span> =&gt; $dt, <span class="string">"route"</span> =&gt; $re[<span class="number">0</span>],<span class="string">"thumb_route"</span>=&gt;$se[<span class="number">0</span>]],</span><br><span class="line">                        [<span class="string">"route_dy_id"</span> =&gt; $dt, <span class="string">"route"</span> =&gt; $re[<span class="number">1</span>],<span class="string">"thumb_route"</span>=&gt;$se[<span class="number">1</span>]],</span><br><span class="line">                        [<span class="string">"route_dy_id"</span> =&gt; $dt, <span class="string">"route"</span> =&gt; $re[<span class="number">2</span>],<span class="string">"thumb_route"</span>=&gt;$se[<span class="number">2</span>]],</span><br><span class="line">                        [<span class="string">"route_dy_id"</span> =&gt; $dt, <span class="string">"route"</span> =&gt; $re[<span class="number">3</span>],<span class="string">"thumb_route"</span>=&gt;$se[<span class="number">3</span>]],</span><br><span class="line">                        [<span class="string">"route_dy_id"</span> =&gt; $dt, <span class="string">"route"</span> =&gt; $re[<span class="number">4</span>],<span class="string">"thumb_route"</span>=&gt;$se[<span class="number">4</span>]],</span><br><span class="line">                        [<span class="string">"route_dy_id"</span> =&gt; $dt, <span class="string">"route"</span> =&gt; $re[<span class="number">5</span>],<span class="string">"thumb_route"</span>=&gt;$se[<span class="number">5</span>]],</span><br><span class="line">                        [<span class="string">"route_dy_id"</span> =&gt; $dt, <span class="string">"route"</span> =&gt; $re[<span class="number">6</span>],<span class="string">"thumb_route"</span>=&gt;$se[<span class="number">6</span>]],</span><br><span class="line">                        [<span class="string">"route_dy_id"</span> =&gt; $dt, <span class="string">"route"</span> =&gt; $re[<span class="number">7</span>],<span class="string">"thumb_route"</span>=&gt;$se[<span class="number">7</span>]]</span><br><span class="line">                    ];</span><br><span class="line">                    $result = $route-&gt;saveAll($data);</span><br><span class="line">                    <span class="keyword">if</span>($result) &#123;</span><br><span class="line">                        <span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">                    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                        <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;;<span class="keyword">break</span>;</span><br><span class="line">                <span class="keyword">case</span> <span class="number">9</span>:&#123;</span><br><span class="line">                    $route = <span class="keyword">new</span> RouteModel();</span><br><span class="line">                    $data = [</span><br><span class="line">                        [<span class="string">"route_dy_id"</span> =&gt; $dt, <span class="string">"route"</span> =&gt; $re[<span class="number">0</span>],<span class="string">"thumb_route"</span>=&gt;$se[<span class="number">0</span>]],</span><br><span class="line">                        [<span class="string">"route_dy_id"</span> =&gt; $dt, <span class="string">"route"</span> =&gt; $re[<span class="number">1</span>],<span class="string">"thumb_route"</span>=&gt;$se[<span class="number">1</span>]],</span><br><span class="line">                        [<span class="string">"route_dy_id"</span> =&gt; $dt, <span class="string">"route"</span> =&gt; $re[<span class="number">2</span>],<span class="string">"thumb_route"</span>=&gt;$se[<span class="number">2</span>]],</span><br><span class="line">                        [<span class="string">"route_dy_id"</span> =&gt; $dt, <span class="string">"route"</span> =&gt; $re[<span class="number">3</span>],<span class="string">"thumb_route"</span>=&gt;$se[<span class="number">3</span>]],</span><br><span class="line">                        [<span class="string">"route_dy_id"</span> =&gt; $dt, <span class="string">"route"</span> =&gt; $re[<span class="number">4</span>],<span class="string">"thumb_route"</span>=&gt;$se[<span class="number">4</span>]],</span><br><span class="line">                        [<span class="string">"route_dy_id"</span> =&gt; $dt, <span class="string">"route"</span> =&gt; $re[<span class="number">5</span>],<span class="string">"thumb_route"</span>=&gt;$se[<span class="number">5</span>]],</span><br><span class="line">                        [<span class="string">"route_dy_id"</span> =&gt; $dt, <span class="string">"route"</span> =&gt; $re[<span class="number">6</span>],<span class="string">"thumb_route"</span>=&gt;$se[<span class="number">6</span>]],</span><br><span class="line">                        [<span class="string">"route_dy_id"</span> =&gt; $dt, <span class="string">"route"</span> =&gt; $re[<span class="number">7</span>],<span class="string">"thumb_route"</span>=&gt;$se[<span class="number">7</span>]],</span><br><span class="line">                        [<span class="string">"route_dy_id"</span> =&gt; $dt, <span class="string">"route"</span> =&gt; $re[<span class="number">8</span>],<span class="string">"thumb_route"</span>=&gt;$se[<span class="number">8</span>]]</span><br><span class="line">                    ];</span><br><span class="line">                    $result = $route-&gt;saveAll($data);</span><br><span class="line">                    <span class="keyword">if</span>($result) &#123;</span><br><span class="line">                        <span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">                    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                        <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;;<span class="keyword">break</span>;</span><br><span class="line">                <span class="keyword">default</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>创建一个模型 Route.php</li>
+<li>一般处理数据库的代码都会放在这里处理的</li>
+<li>上面我是在控制器里处理的，这样是不好的，有时间我会去重新整理</li>
+</ul>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * Created by PhpStorm.</span></span><br><span class="line"><span class="comment"> * User: LHTon</span></span><br><span class="line"><span class="comment"> * Date: 2019/3/13</span></span><br><span class="line"><span class="comment"> * Time: 8:42</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">namespace</span> <span class="title">app</span>\<span class="title">home</span>\<span class="title">model</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">use</span> <span class="title">think</span>\<span class="title">Model</span>;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Route</span> <span class="keyword">extends</span> <span class="title">Model</span></span></span><br><span class="line"><span class="class"></span>&#123;</span><br><span class="line">    <span class="keyword">protected</span> $table = <span class="string">'dy_route'</span>;</span><br><span class="line">    <span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">add</span><span class="params">($data)</span> </span>&#123;</span><br><span class="line">        $result = <span class="keyword">$this</span> -&gt; save($data);</span><br><span class="line">        <span class="keyword">return</span> $result;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>以上将文件保存在本地的处理视频和多文件上传的过程。</li>
+</ul>
+
+                
+
+                <hr>
+                <!-- Pager -->
+                <ul class="pager">
+                    
+                        <li class="previous">
+                            <a href="/2019/10/24/TP5生成小程序二维码图/" data-toggle="tooltip" data-placement="top" title="TP5生成小程序二维码图">&larr; Previous Post</a>
+                        </li>
+                    
+                    
+                        <li class="next">
+                            <a href="/2019/10/23/TP5邮箱发送验证码/" data-toggle="tooltip" data-placement="top" title="TP5邮箱发送验证码">Next Post &rarr;</a>
+                        </li>
+                    
+                </ul>
+
+                <!-- duoshuo Share start -->
+                
+                <!-- 多说 Share end-->
+
+                <!-- 多说评论框 start -->
+                
+                <!-- 多说评论框 end -->
+
+                <!-- disqus comment start -->
+                
+                    <div class="comment">
+                        <div id="disqus_thread" class="disqus-thread"></div>
+                    </div>
+                
+                <!-- disqus comment end -->
+            </div>
+            
+            <!-- Tabe of Content -->
+            <!-- Table of Contents -->
+
+    
+      <aside id="sidebar">
+        <div id="toc" class="toc-article">
+        <strong class="toc-title">Contents</strong>
+        
+          <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#null"><span class="toc-nav-number">1.</span> <span class="toc-nav-text">多文件上传并生成缩列图和上传视频</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#null"><span class="toc-nav-number">1.0.1.</span> <span class="toc-nav-text">方法一将图片和视频保存在七牛云上</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#null"><span class="toc-nav-number">1.0.2.</span> <span class="toc-nav-text">代码的实现</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#null"><span class="toc-nav-number">1.0.3.</span> <span class="toc-nav-text">方法二视频和图片是保存在本地的</span></a></li></ol></li></ol></li></ol>
+        
+        </div>
+      </aside>
+    
+
+                
+            <!-- Sidebar Container -->
+            <div class="
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                sidebar-container">
+
+                <!-- Featured Tags -->
+                
+                <section>
+                    <!-- no hr -->
+                    <h5><a href="/tags/">FEATURED TAGS</a></h5>
+                    <div class="tags">
+                       
+                          <a class="tag" href="/tags/#上传文件" title="上传文件">上传文件</a>
+                        
+                          <a class="tag" href="/tags/#上传视频" title="上传视频">上传视频</a>
+                        
+                          <a class="tag" href="/tags/#TP5" title="TP5">TP5</a>
+                        
+                    </div>
+                </section>
+                
+
+                <!-- Friends Blog -->
+                
+                <hr>
+                <h5>FRIENDS</h5>
+                <ul class="list-inline">
+
+                    
+                        <li><a href="http://beantech.org" target="_blank">Bean Tech</a></li>
+                    
+                        <li><a href="http://blog.kaijun.rocks" target="_blank">Kaijun&#39;s Blog</a></li>
+                    
+                        <li><a href="http://huangxuan.me" target="_blank">Hux Blog</a></li>
+                    
+                        <li><a href="#" target="_blank">It Helps SEO</a></li>
+                    
+                </ul>
+                
+            </div>
+        </div>
+    </div>
+</article>
+
+
+
+
+<!-- disqus embedded js code start (one page only need to embed once) -->
+<script type="text/javascript">
+    /* * * CONFIGURATION VARIABLES * * */
+    var disqus_shortname = "your-disqus-ID";
+    var disqus_identifier = "http://yoursite-url/2019/10/23/TP5上传文件/";
+    var disqus_url = "http://yoursite-url/2019/10/23/TP5上传文件/";
+
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<!-- disqus embedded js code start end -->
+
+
+
+
+<!-- async load function -->
+<script>
+    function async(u, c) {
+      var d = document, t = 'script',
+          o = d.createElement(t),
+          s = d.getElementsByTagName(t)[0];
+      o.src = u;
+      if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+      s.parentNode.insertBefore(o, s);
+    }
+</script>
+<!-- anchor-js, Doc:http://bryanbraun.github.io/anchorjs/ -->
+<script>
+    async("https://cdn.bootcss.com/anchor-js/1.1.1/anchor.min.js",function(){
+        anchors.options = {
+          visible: 'hover',
+          placement: 'left',
+          icon: 'ℬ'
+        };
+        anchors.add().remove('.intro-header h1').remove('.subheading').remove('.sidebar-container h5');
+    })
+</script>
+<style>
+    /* place left on bigger screen */
+    @media all and (min-width: 800px) {
+        .anchorjs-link{
+            position: absolute;
+            left: -0.75em;
+            font-size: 1.1em;
+            margin-top : -0.1em;
+        }
+    }
+</style>
+
+
+
+    <!-- Footer -->
+    <!-- Footer -->
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <ul class="list-inline text-center">
+                
+                
+                
+                    <li>
+                        <a target="_blank" href="https://www.zhihu.com/people/Demonbane">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa  fa-stack-1x fa-inverse">知</i>
+                            </span>
+                        </a>
+                    </li>
+                
+
+                
+                    <li>
+                        <a target="_blank" href="http://weibo.com/Demonbaneen">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-weibo fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                
+
+                
+
+                
+                    <li>
+                        <a target="_blank"  href="https://github.com/LHTon">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                
+
+                
+
+                </ul>
+                <p class="copyright text-muted">
+                    Copyright &copy; LHTon 2019 
+                    <br>
+                    Theme by <a href="http://huangxuan.me">Hux</a> 
+                    <span style="display: inline-block; margin: 0 5px;">
+                        <i class="fa fa-heart"></i>
+                    </span> 
+                    re-Ported by <a href="http://beantech.org">BeanTech</a> | 
+                    <iframe
+                        style="margin-left: 2px; margin-bottom:-5px;"
+                        frameborder="0" scrolling="0" width="91px" height="20px"
+                        src="https://ghbtns.com/github-btn.html?user=YenYuHsuan&repo=hexo-theme-beantech&type=star&count=true" >
+                    </iframe>
+                </p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- jQuery -->
+<script src="/js/jquery.min.js"></script>
+
+<!-- Bootstrap Core JavaScript -->
+<script src="/js/bootstrap.min.js"></script>
+
+<!-- Custom Theme JavaScript -->
+<script src="/js/hux-blog.min.js"></script>
+
+
+<!-- async load function -->
+<script>
+    function async(u, c) {
+      var d = document, t = 'script',
+          o = d.createElement(t),
+          s = d.getElementsByTagName(t)[0];
+      o.src = u;
+      if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+      s.parentNode.insertBefore(o, s);
+    }
+</script>
+
+<!-- 
+     Because of the native support for backtick-style fenced code blocks 
+     right within the Markdown is landed in Github Pages, 
+     From V1.6, There is no need for Highlight.js, 
+     so Huxblog drops it officially.
+
+     - https://github.com/blog/2100-github-pages-now-faster-and-simpler-with-jekyll-3-0  
+     - https://help.github.com/articles/creating-and-highlighting-code-blocks/    
+-->
+<!--
+    <script>
+        async("http://cdn.bootcss.com/highlight.js/8.6/highlight.min.js", function(){
+            hljs.initHighlightingOnLoad();
+        })
+    </script>
+    <link href="http://cdn.bootcss.com/highlight.js/8.6/styles/github.min.css" rel="stylesheet">
+-->
+
+
+<!-- jquery.tagcloud.js -->
+<script>
+    // only load tagcloud.js in tag.html
+    if($('#tag_cloud').length !== 0){
+        async("http://yoursite-url/js/jquery.tagcloud.js",function(){
+            $.fn.tagcloud.defaults = {
+                //size: {start: 1, end: 1, unit: 'em'},
+                color: {start: '#bbbbee', end: '#0085a1'},
+            };
+            $('#tag_cloud a').tagcloud();
+        })
+    }
+</script>
+
+<!--fastClick.js -->
+<script>
+    async("https://cdn.bootcss.com/fastclick/1.0.6/fastclick.min.js", function(){
+        var $nav = document.querySelector("nav");
+        if($nav) FastClick.attach($nav);
+    })
+</script>
+
+
+<!-- Google Analytics -->
+
+
+<script>
+    // dynamic User by Hux
+    var _gaId = 'UA-XXXXXXXX-X';
+    var _gaDomain = 'yoursite';
+
+    // Originial
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', _gaId, _gaDomain);
+    ga('send', 'pageview');
+</script>
+
+
+
+
+<!-- Baidu Tongji -->
+
+
+
+
+
+
+	<a id="rocket" href="#top" class=""></a>
+	<script type="text/javascript" src="/js/totop.js?v=1.0.0" async=""></script>
+    <script type="text/javascript" src="/js/toc.js?v=1.0.0" async=""></script>
+<!-- Image to hack wechat -->
+<img src="http://yoursite-url/img/icon_wechat.png" width="0" height="0" />
+<!-- Migrate from head to bottom, no longer block render and still work -->
+
+</body>
+
+</html>
