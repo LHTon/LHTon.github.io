@@ -213,6 +213,121 @@
 
 <div class="post-preview">
 
+    <a href="/2019/10/28/PHP处理微信用户昵称带有表情的问题/">
+        <h2 class="post-title">
+            PHP处理微信用户昵称带有表情的问题
+        </h2>
+        <h3 class="post-subtitle">
+            
+        </h3>
+        <div class="post-content-preview">
+            PHP处理微信用户昵称带有表情的问题
+
+
+最近遇到一个问题，保存用户信息的时候，用户的昵称居然是空的，后面发现是因为用户的昵称
+中有表情，存进数据库时被过滤掉了，所以我们需要存数据库时做一下处理，取出来时也做处理。
+
+
+第一种方法可以编码加密或解密
+12base64_encode(); //存储base64_decode(); //取出
+第二种方法是通过正则过滤
+12345678910111......
+        </div>
+    </a>
+    
+        <p class="post-meta" style="margin: 10px 0;">
+            Posted by LHTon on
+            2019-10-28
+        </p>
+        <div class="tags">
+            
+              <a href="/tags/#微信表情包" title="微信表情包">微信表情包</a>
+            
+        </div>
+    
+
+</div>
+<hr>
+
+<div class="post-preview">
+
+    <a href="/2019/10/27/TP5导入Excel文件数据到数据库/">
+        <h2 class="post-title">
+            TP5导入Excel文件数据到数据库
+        </h2>
+        <h3 class="post-subtitle">
+            
+        </h3>
+        <div class="post-content-preview">
+            TP5批量导入数据
+前提准备
+
+需要引入第三方库 PHPExcel
+下载链接：
+将下载好的文件，放在框架的vedor文件里面
+
+代码的实现：
+
+下面是处理批量添加学生信息
+将Eecel文件的数据导入数据库
+上传Excel的模板如下
+
+12345678910111213141516171819202122232425262728293031323334353637383940414243444......
+        </div>
+    </a>
+    
+        <p class="post-meta" style="margin: 10px 0;">
+            Posted by LHTon on
+            2019-10-27
+        </p>
+        <div class="tags">
+            
+              <a href="/tags/#TP5" title="TP5">TP5</a>
+            
+              <a href="/tags/#批量导入Excel数据" title="批量导入Excel数据">批量导入Excel数据</a>
+            
+        </div>
+    
+
+</div>
+<hr>
+
+<div class="post-preview">
+
+    <a href="/2019/10/26/TP5小程序登录/">
+        <h2 class="post-title">
+            TP5小程序登录
+        </h2>
+        <h3 class="post-subtitle">
+            
+        </h3>
+        <div class="post-content-preview">
+            TP5与小程序的授权登录
+
+代码实现
+
+12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152535455565758596061626364&lt;?phpnamespace app\index\controller;use think\Controlle......
+        </div>
+    </a>
+    
+        <p class="post-meta" style="margin: 10px 0;">
+            Posted by LHTon on
+            2019-10-26
+        </p>
+        <div class="tags">
+            
+              <a href="/tags/#TP5" title="TP5">TP5</a>
+            
+              <a href="/tags/#小程序登录" title="小程序登录">小程序登录</a>
+            
+        </div>
+    
+
+</div>
+<hr>
+
+<div class="post-preview">
+
     <a href="/2019/10/24/TP5生成小程序二维码图/">
         <h2 class="post-title">
             TP5生成小程序二维码图
@@ -360,7 +475,26 @@
         </h3>
         <div class="post-content-preview">
             TP5笔记
-...
+php基本类型
+四种标量类型：
+
+boolean （布尔型）
+integer （整型）
+float （浮点型, 也称作 double)
+string （字符串）
+
+两种复合类型：
+
+array （数组）
+object （对象）
+
+最后是两种特殊类型：
+
+resource　（资源）
+NULL　（NULL）
+
+说一下资源类型：
+资源 resource 是一种特殊变量，保存了到外部资源......
         </div>
     </a>
     
@@ -524,7 +658,13 @@ I publish the whole project f......
             
         
             
-            <a href="/tags/#TP5" title="TP5" rel="3">TP5</a>
+        
+            
+            <a href="/tags/#TP5" title="TP5" rel="5">TP5</a>
+            
+        
+            
+        
             
         
             
@@ -611,23 +751,23 @@ I publish the whole project f......
     <ul>
       
         <li>
+          <a href="/2019/10/28/PHP处理微信用户昵称带有表情的问题/">PHP处理微信用户昵称带有表情的问题</a>
+        </li>
+      
+        <li>
+          <a href="/2019/10/27/TP5导入Excel文件数据到数据库/">TP5导入Excel文件数据到数据库</a>
+        </li>
+      
+        <li>
+          <a href="/2019/10/26/TP5小程序登录/">TP5小程序登录</a>
+        </li>
+      
+        <li>
           <a href="/2019/10/24/TP5生成小程序二维码图/">TP5生成小程序二维码图</a>
         </li>
       
         <li>
           <a href="/2019/10/23/TP5上传文件/">TP5上传文件和视频</a>
-        </li>
-      
-        <li>
-          <a href="/2019/10/23/TP5邮箱发送验证码/">TP5邮箱发送验证码</a>
-        </li>
-      
-        <li>
-          <a href="/2019/09/30/tp5笔记/">tp5笔记</a>
-        </li>
-      
-        <li>
-          <a href="/2019/09/27/网站资源/">网站的学习资源</a>
         </li>
       
     </ul>

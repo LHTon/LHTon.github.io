@@ -14,11 +14,11 @@
     <script async defer src="https://buttons.github.io/buttons.js"></script>
     <title>
         
-          tp5笔记 - LHTon | 个人博客
+          TP5小程序登录 - LHTon | 个人博客
         
     </title>
 
-    <link rel="canonical" href="http://yoursite-url/2019/09/30/tp5笔记/">
+    <link rel="canonical" href="http://yoursite-url/2019/10/26/TP5小程序登录/">
 
     <!-- Bootstrap Core CSS -->
     <link rel="stylesheet" href="/css/bootstrap.min.css">
@@ -69,7 +69,7 @@
 <style type="text/css">
     header.intro-header{
         
-            background-image: url('Iron-Man-3.jpg')
+            background-image: url('tag-bg.png')
             /*post*/
         
     }
@@ -90,14 +90,16 @@
                     <div class="post-heading">
                         <div class="tags">
                             
-                              <a class="tag" href="/tags/#笔记" title="笔记">笔记</a>
+                              <a class="tag" href="/tags/#TP5" title="TP5">TP5</a>
+                            
+                              <a class="tag" href="/tags/#小程序登录" title="小程序登录">小程序登录</a>
                             
                         </div>
-                        <h1>tp5笔记</h1>
-                        <h2 class="subheading">储备干货</h2>
+                        <h1>TP5小程序登录</h1>
+                        <h2 class="subheading"></h2>
                         <span class="meta">
                             Posted by LHTon on
-                            2019-09-30
+                            2019-10-26
                         </span>
                     </div>
                 
@@ -214,80 +216,11 @@
                 col-md-10 col-md-offset-1
                 post-container">
 
-                <h1><span id="tp5笔记">TP5笔记</span></h1>
-<h2><span id="php基本类型">php基本类型</span></h2>
-<h4><span id="四种标量类型">四种标量类型：</span></h4>
+                <h1><span id="tp5与小程序的授权登录">TP5与小程序的授权登录</span></h1>
 <ul>
-<li>boolean （布尔型）</li>
-<li>integer （整型）</li>
-<li>float （浮点型, 也称作 double)</li>
-<li>string （字符串）</li>
+<li>代码实现</li>
 </ul>
-<h4><span id="两种复合类型">两种复合类型：</span></h4>
-<ul>
-<li>array （数组）</li>
-<li>object （对象）</li>
-</ul>
-<h4><span id="最后是两种特殊类型">最后是两种特殊类型：</span></h4>
-<ul>
-<li>resource　（资源）</li>
-<li>NULL　（NULL）</li>
-</ul>
-<p>说一下资源类型：<br>
-资源 resource 是一种特殊变量，保存了到外部资源的一个引用。<br><br>
-资源类型变量保存有为打开文件、数据库连接、图形画布区域等的特殊句柄。</p>
-<hr>
-<h3><span id="常用的函数">常用的函数</span></h3>
-<ol>
-<li>echo()【语言结构】</li>
-<li>var_dump()</li>
-<li>回调函数</li>
-<li>字符串函数</li>
-<li>数学函数</li>
-</ol>
-<blockquote>
-<blockquote>
-<p>1.ceil()//向上取整<br>
-2.floor()//向下取整<br>
-3.round();//四舍五入<br>
-5.rand(10，100)//随机取值<br>
-6.mt_rand(10,100)//随机取值，算法不同，速度更快<br>
-7.fmod()//返回除法浮点形余数<br>
-8.max(int/$arr)//取最大值<br>
-9.min(int/$arr)//取最小值<br>
-10.pow(1024,2)//返回1021的2次幂<br>
-&lt;&lt;</p>
-</blockquote>
-</blockquote>
-<h2><span id="缓存memcacheed">缓存Memcacheed</span></h2>
-<ul>
-<li><strong>Memcacheed</strong>是高性能的分布式内存缓存服务器，通过缓存数据库查询结果，<br><br>
-减少数据库的访问次数,提高Web应用的速度和扩展性</li>
-<li>为什么要使用Memcache</li>
-</ul>
-<ol>
-<li>对数据库的高并发读写</li>
-<li>对海量数据的处理</li>
-</ol>
-<h3><span id="使用memcache扩展访问memcached服务器">使用memcache扩展访问Memcached服务器</span></h3>
-<blockquote>
-<p>Memcache::connect</p>
-<blockquote>
-<p>connect方法用于连接Memcached服务器</p>
-</blockquote>
-</blockquote>
-<blockquote>
-<p>Memcache::addServer</p>
-<blockquote>
-<p>addServer 方法用于向对象添加一个服务器</p>
-</blockquote>
-</blockquote>
-<blockquote>
-<p>Memcache::add</p>
-<blockquote>
-<p>add方法用于向Memcached服务器添加一个要缓存的数据</p>
-</blockquote>
-</blockquote>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line"><span class="keyword">namespace</span> <span class="title">app</span>\<span class="title">index</span>\<span class="title">controller</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">use</span> <span class="title">think</span>\<span class="title">Controller</span>;</span><br><span class="line"><span class="keyword">use</span> <span class="title">think</span>\<span class="title">Db</span>;</span><br><span class="line"><span class="keyword">use</span> <span class="title">app</span>\<span class="title">index</span>\<span class="title">common</span>\<span class="title">Curl</span>;</span><br><span class="line"></span><br><span class="line">header(<span class="string">'Access-Control-Allow-Origin: *'</span>);</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Login</span> <span class="keyword">extends</span> <span class="title">Controller</span></span></span><br><span class="line"><span class="class"></span>&#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">index</span><span class="params">()</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        $data = input(<span class="string">'post.'</span>);</span><br><span class="line">       <span class="comment">//配置appid</span></span><br><span class="line">        $appid = <span class="string">'wx30cbd5bf82ee6334'</span>;</span><br><span class="line">      <span class="comment">//配置appscret</span></span><br><span class="line">        $secret = <span class="string">'4ecf0ed139067bea03c335fb3200edac'</span>;</span><br><span class="line">      <span class="comment">//api接口</span></span><br><span class="line">        $api = <span class="string">"https://api.weixin.qq.com/sns/jscode2session?</span></span><br><span class="line"><span class="string">        appid=&#123;$appid&#125;&amp;secret=&#123;$secret&#125;&amp;js_code=&#123;$data['code']&#125;</span></span><br><span class="line"><span class="string">        &amp;grant_type=authorization_code"</span>;</span><br><span class="line"></span><br><span class="line">      <span class="comment">//获取GET请求</span></span><br><span class="line">        <span class="function"><span class="keyword">function</span> <span class="title">httpGet</span><span class="params">($url)</span></span></span><br><span class="line"><span class="function">        </span>&#123;</span><br><span class="line"><span class="comment">//            $method=strtoupper($method);</span></span><br><span class="line">            $header = <span class="keyword">array</span>(<span class="string">"Accept-Charset: utf-8"</span>);</span><br><span class="line">            $ch = curl_init();</span><br><span class="line">            curl_setopt($ch, CURLOPT_URL, $url);</span><br><span class="line">            curl_setopt($ch, CURLOPT_CUSTOMREQUEST, <span class="string">'POST'</span>);</span><br><span class="line">            curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, <span class="keyword">FALSE</span>);</span><br><span class="line">            curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, <span class="keyword">FALSE</span>);</span><br><span class="line">            curl_setopt($ch, CURLOPT_HTTPHEADER, $header);</span><br><span class="line">            curl_setopt($ch, CURLOPT_USERAGENT, </span><br><span class="line">            <span class="string">'Mozilla/5.0 (compatible; MSIE 5.01; Windows NT 5.0)'</span>);</span><br><span class="line">            curl_setopt($ch, CURLOPT_FOLLOWLOCATION, <span class="number">1</span>);</span><br><span class="line">            curl_setopt($ch, CURLOPT_AUTOREFERER, <span class="number">1</span>);</span><br><span class="line">            <span class="comment">//if($method=='POST')&#123;</span></span><br><span class="line">            curl_setopt($ch, CURLOPT_POSTFIELDS, $data=<span class="string">''</span>);</span><br><span class="line">            <span class="comment">//&#125;</span></span><br><span class="line">            curl_setopt($ch, CURLOPT_RETURNTRANSFER, <span class="keyword">true</span>);</span><br><span class="line">            $res = curl_exec($ch);</span><br><span class="line">            <span class="keyword">return</span> $res;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//发送</span></span><br><span class="line">        $str = httpGet($api);</span><br><span class="line"><span class="comment">//        echo $str;</span></span><br><span class="line">        $arr = json_decode($str, <span class="keyword">true</span>);</span><br><span class="line">        $openid = $arr[<span class="string">'openid'</span>];</span><br><span class="line">        <span class="comment">//查询数据库是否有这个用户信息</span></span><br><span class="line">        $re = Db::table(<span class="string">'dy_user'</span>)-&gt;where(<span class="string">'openid'</span>,$openid)-&gt;select();</span><br><span class="line">        <span class="keyword">if</span>($re)&#123;</span><br><span class="line">            <span class="keyword">return</span> $str;</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            $insert = Db::table(<span class="string">'dy_user'</span>)</span><br><span class="line">                -&gt;insert([</span><br><span class="line">                    <span class="string">'openid'</span> =&gt; $openid,</span><br><span class="line">                ]);</span><br><span class="line">            <span class="keyword">return</span> $str;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
                 
 
@@ -296,12 +229,12 @@
                 <ul class="pager">
                     
                         <li class="previous">
-                            <a href="/2019/10/23/TP5邮箱发送验证码/" data-toggle="tooltip" data-placement="top" title="TP5邮箱发送验证码">&larr; Previous Post</a>
+                            <a href="/2019/10/27/TP5导入Excel文件数据到数据库/" data-toggle="tooltip" data-placement="top" title="TP5导入Excel文件数据到数据库">&larr; Previous Post</a>
                         </li>
                     
                     
                         <li class="next">
-                            <a href="/2019/09/27/网站资源/" data-toggle="tooltip" data-placement="top" title="网站的学习资源">Next Post &rarr;</a>
+                            <a href="/2019/10/24/TP5生成小程序二维码图/" data-toggle="tooltip" data-placement="top" title="TP5生成小程序二维码图">Next Post &rarr;</a>
                         </li>
                     
                 </ul>
@@ -331,7 +264,7 @@
         <div id="toc" class="toc-article">
         <strong class="toc-title">Contents</strong>
         
-          <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#null"><span class="toc-nav-number">1.</span> <span class="toc-nav-text">TP5笔记</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#null"><span class="toc-nav-number">1.1.</span> <span class="toc-nav-text">php基本类型</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#null"><span class="toc-nav-number">1.1.0.1.</span> <span class="toc-nav-text">四种标量类型：</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#null"><span class="toc-nav-number">1.1.0.2.</span> <span class="toc-nav-text">两种复合类型：</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#null"><span class="toc-nav-number">1.1.0.3.</span> <span class="toc-nav-text">最后是两种特殊类型：</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#null"><span class="toc-nav-number">1.1.1.</span> <span class="toc-nav-text">常用的函数</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#null"><span class="toc-nav-number">1.2.</span> <span class="toc-nav-text">缓存Memcacheed</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#null"><span class="toc-nav-number">1.2.1.</span> <span class="toc-nav-text">使用memcache扩展访问Memcached服务器</span></a></li></ol></li></ol></li></ol>
+          <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#null"><span class="toc-nav-number">1.</span> <span class="toc-nav-text">TP5与小程序的授权登录</span></a></li></ol>
         
         </div>
       </aside>
@@ -351,7 +284,9 @@
                     <h5><a href="/tags/">FEATURED TAGS</a></h5>
                     <div class="tags">
                        
-                          <a class="tag" href="/tags/#笔记" title="笔记">笔记</a>
+                          <a class="tag" href="/tags/#TP5" title="TP5">TP5</a>
+                        
+                          <a class="tag" href="/tags/#小程序登录" title="小程序登录">小程序登录</a>
                         
                     </div>
                 </section>
@@ -386,8 +321,8 @@
 <script type="text/javascript">
     /* * * CONFIGURATION VARIABLES * * */
     var disqus_shortname = "your-disqus-ID";
-    var disqus_identifier = "http://yoursite-url/2019/09/30/tp5笔记/";
-    var disqus_url = "http://yoursite-url/2019/09/30/tp5笔记/";
+    var disqus_identifier = "http://yoursite-url/2019/10/26/TP5小程序登录/";
+    var disqus_url = "http://yoursite-url/2019/10/26/TP5小程序登录/";
 
     (function() {
         var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
