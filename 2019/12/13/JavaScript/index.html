@@ -1,0 +1,904 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Head tag -->
+<head><meta name="generator" content="Hexo 3.9.0">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="google-site-verification" content="xBT4GhYoi5qRD5tr338pgPM5OWHHIDR6mNg1a3euekI">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content>
+    <meta name="keyword" content>
+    <link rel="shortcut icon" href="/img/ironman-draw.png">
+    <!-- Place this tag in your head or just before your close body tag. -->
+    <script async defer src="https://buttons.github.io/buttons.js"></script>
+    <title>
+        
+          JavaScript - LHTon | 个人博客
+        
+    </title>
+
+    <link rel="canonical" href="http://yoursite-url/2019/12/13/JavaScript/">
+
+    <!-- Bootstrap Core CSS -->
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+
+    <!-- Custom CSS --> 
+    <link rel="stylesheet" href="/css/beantech.min.css">
+    
+    <!-- Pygments Highlight CSS -->
+    <link rel="stylesheet" href="/css/highlight.css">
+
+    <link rel="stylesheet" href="/css/widget.css">
+
+    <link rel="stylesheet" href="/css/rocket.css">
+
+    <link rel="stylesheet" href="/css/signature.css">
+
+    <link rel="stylesheet" href="/css/toc.css">
+
+    <!-- Custom Fonts -->
+    <!-- <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" type="text/css"> -->
+    <!-- Hux change font-awesome CDN to qiniu -->
+    <link href="https://cdn.staticfile.org/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+
+    <!-- Hux Delete, sad but pending in China
+    <link href='http://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/
+    css'>
+    -->
+
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- ga & ba script hoook -->
+    <script></script>
+</head>
+
+
+<!-- hack iOS CSS :active style -->
+<body ontouchstart="">
+	<!-- Modified by Yu-Hsuan Yen -->
+<!-- Post Header -->
+<style type="text/css">
+    header.intro-header{
+        
+            background-image: url('tag-bg.png')
+            /*post*/
+        
+    }
+    
+    #signature{
+        background-image: url('/img/signature/BeanTechSign-white.png');
+    }
+    
+</style>
+
+<header class="intro-header" >
+    <!-- Signature -->
+    <div id="signature">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                
+                    <div class="post-heading">
+                        <div class="tags">
+                            
+                              <a class="tag" href="/tags/#js" title="js">js</a>
+                            
+                        </div>
+                        <h1>JavaScript</h1>
+                        <h2 class="subheading"></h2>
+                        <span class="meta">
+                            Posted by LHTon on
+                            2019-12-13
+                        </span>
+                    </div>
+                
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+	
+    <!-- Navigation -->
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">林宏通博客</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <!-- Known Issue, found by Hux:
+            <nav>'s height woule be hold on by its content.
+            so, when navbar scale out, the <nav> will cover tags.
+            also mask any touch event of tags, unfortunately.
+        -->
+        <div id="huxblog_navbar">
+            <div class="navbar-collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="/">Home</a>
+                    </li>
+
+                    
+
+                        
+                    
+
+                        
+                        <li>
+                            <a href="/about/">About</a>
+                        </li>
+                        
+                    
+
+                        
+                        <li>
+                            <a href="/archive/">Archives</a>
+                        </li>
+                        
+                    
+
+                        
+                        <li>
+                            <a href="/tags/">Tags</a>
+                        </li>
+                        
+                    
+                    
+                </ul>
+            </div>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container -->
+</nav>
+<script>
+    // Drop Bootstarp low-performance Navbar
+    // Use customize navbar with high-quality material design animation
+    // in high-perf jank-free CSS3 implementation
+    var $body   = document.body;
+    var $toggle = document.querySelector('.navbar-toggle');
+    var $navbar = document.querySelector('#huxblog_navbar');
+    var $collapse = document.querySelector('.navbar-collapse');
+
+    $toggle.addEventListener('click', handleMagic)
+    function handleMagic(e){
+        if ($navbar.className.indexOf('in') > 0) {
+        // CLOSE
+            $navbar.className = " ";
+            // wait until animation end.
+            setTimeout(function(){
+                // prevent frequently toggle
+                if($navbar.className.indexOf('in') < 0) {
+                    $collapse.style.height = "0px"
+                }
+            },400)
+        }else{
+        // OPEN
+            $collapse.style.height = "auto"
+            $navbar.className += " in";
+        }
+    }
+</script>
+
+
+    <!-- Main Content -->
+    <!-- Modify by Yu-Hsuan Yen -->
+
+<!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
+
+            <!-- Post Container -->
+            <div class="
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                post-container">
+
+                <h1><span id="数据类型">数据类型</span></h1>
+<h2><span id="number">Number</span></h2>
+<ul>
+<li>JavaScript不区分整数和浮点数，统一用Number表示，以下都是合法的Number类型：</li>
+</ul>
+<h2><span id="字符串">字符串</span></h2>
+<ul>
+<li>字符串是以单引号’或双引号&quot;括起来的任意文本，比如’abc’，“xyz&quot;等等。请注意，’'或”&quot;本身只是一种表示方式，不是字符串的一部分，因此，字符串’abc’只有a，b，c这3个字符。</li>
+</ul>
+<h2><span id="布尔型">布尔型</span></h2>
+<ul>
+<li>布尔值和布尔代数的表示完全一致，一个布尔值只有true、false两种值，要么是true，要么是false，可以直接用true、false表示布尔值，也可以通过布尔运算计算出来：</li>
+</ul>
+<blockquote>
+<blockquote>
+<ul>
+<li>&amp;&amp;运算是与运算，只有所有都为true，&amp;&amp;运算结果才是true</li>
+<li>||运算是或运算，只要其中有一个为true，||运算结果就是true</li>
+<li>!运算是非运算，它是一个单目运算符，把true变成false，false变成true</li>
+</ul>
+</blockquote>
+</blockquote>
+<h2><span id="比较运算符">比较运算符</span></h2>
+<ul>
+<li>第一种是==比较，它会自动转换数据类型再比较，很多时候，会得到非常诡异的结果；</li>
+</ul>
+<p>第二种是===比较，它不会自动转换数据类型，如果数据类型不一致，返回false，如果一致，再比较。</p>
+<p>由于JavaScript这个设计缺陷，不要使用==比较，始终坚持使用===比较</p>
+<ul>
+<li>另一个例外是NaN这个特殊的Number与所有其他值都不相等，包括它自己：</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="literal">NaN</span> === <span class="literal">NaN</span>; <span class="comment">// false</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li>唯一能判断NaN的方法是通过isNaN()函数：</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">isNaN</span>(<span class="literal">NaN</span>); <span class="comment">// true</span></span><br></pre></td></tr></table></figure>
+<h2><span id="null和undefined">null和undefined</span></h2>
+<ul>
+<li>JavaScript的设计者希望用null表示一个空的值，而undefined表示值未定义。</li>
+<li>大多数情况下，我们都应该用null。undefined仅仅在判断函数参数是否传递的情况下有用。</li>
+</ul>
+<h2><span id="数组">数组</span></h2>
+<ul>
+<li>数组是一组按顺序排列的集合，集合的每个值称为元素。JavaScript的数组可以包括任意数据类型。</li>
+<li>数组用[]表示，元素之间用,分隔。</li>
+<li>另一种创建数组的方法是通过Array()函数实现</li>
+<li>出于代码的可读性考虑，强烈建议直接使用[]</li>
+</ul>
+<h2><span id="对象">对象</span></h2>
+<ul>
+<li>JavaScript的对象是一组由键-值组成的无序集合，例如：</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> person = &#123;</span><br><span class="line">    name: <span class="string">'Bob'</span>,</span><br><span class="line">    age: <span class="number">20</span>,</span><br><span class="line">    tags: [<span class="string">'js'</span>, <span class="string">'web'</span>, <span class="string">'mobile'</span>],</span><br><span class="line">    city: <span class="string">'Beijing'</span>,</span><br><span class="line">    hasCar: <span class="literal">true</span>,</span><br><span class="line">    zipcode: <span class="literal">null</span></span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>要获取一个对象的属性，我们用对象变量.属性名的方式：</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">person.name; <span class="comment">// 'Bob'</span></span><br><span class="line">person.zipcode; <span class="comment">// null</span></span><br></pre></td></tr></table></figure>
+<h2><span id="变量">变量</span></h2>
+<ul>
+<li>变量可以是数字，还可以是任意数据类型。</li>
+<li>变量名是大小写英文、数字、$和_的组合，且不能用数字开头。</li>
+<li>变量名也不能是JavaScript的关键字</li>
+</ul>
+<h2><span id="strict模式">strict模式</span></h2>
+<ul>
+<li>在strict模式下运行的JavaScript代码，强制通过var申明变量，未使用var申明变量就使用的，将导致运行错误。</li>
+<li>不用var申明的变量会被视为全局变量，为了避免这一缺陷，所有的JavaScript代码都应该使用strict模式。我们在后面编写的JavaScript代码将全部采用strict模式。</li>
+</ul>
+<hr>
+<hr>
+<h2><span id="字符串">字符串</span></h2>
+<h4><span id="touppercase">toUpperCase</span></h4>
+<ul>
+<li>toUpperCase()把一个字符串全部变为大写：</li>
+</ul>
+<h4><span id="tolowercase">toLowerCase</span></h4>
+<ul>
+<li>toLowerCase()把一个字符串全部变为小写：</li>
+</ul>
+<h4><span id="indexof">indexOf</span></h4>
+<ul>
+<li>indexOf()会搜索指定字符串出现的位置：</li>
+</ul>
+<h4><span id="substring">substring</span></h4>
+<ul>
+<li>substring()返回指定索引区间的子串：</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> s = <span class="string">'hello, world'</span></span><br><span class="line">s.substring(<span class="number">0</span>, <span class="number">5</span>); <span class="comment">// 从索引0开始到5（不包括5），返回'hello'</span></span><br><span class="line">s.substring(<span class="number">7</span>); <span class="comment">// 从索引7开始到结束，返回'world'</span></span><br></pre></td></tr></table></figure>
+<hr>
+<hr>
+<h3><span id="数组">数组</span></h3>
+<ul>
+<li>JavaScript的Array可以包含任意数据类型，并通过索引来访问每个元素。</li>
+<li>要取得Array的长度，直接访问length属性</li>
+</ul>
+<h4><span id="indexof">indexOf</span></h4>
+<ul>
+<li>与String类似，Array也可以通过indexOf()来搜索一个指定的元素的位置</li>
+</ul>
+<h4><span id="slice">slice</span></h4>
+<ul>
+<li>slice()就是对应String的substring()版本，它截取Array的部分元素，然后返回一个新的Array</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> arr = [<span class="string">'A'</span>, <span class="string">'B'</span>, <span class="string">'C'</span>, <span class="string">'D'</span>, <span class="string">'E'</span>, <span class="string">'F'</span>, <span class="string">'G'</span>];</span><br><span class="line">arr.slice(<span class="number">0</span>, <span class="number">3</span>); <span class="comment">// 从索引0开始，到索引3结束，但不包括索引3: ['A', 'B', 'C']</span></span><br><span class="line">arr.slice(<span class="number">3</span>); <span class="comment">// 从索引3开始到结束: ['D', 'E', 'F', 'G']</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li>注意到slice()的起止参数包括开始索引，不包括结束索引。</li>
+</ul>
+<h4><span id="push和pop">push和pop</span></h4>
+<ul>
+<li>push()向Array的末尾添加若干元素，pop()则把Array的最后一个元素删除掉</li>
+</ul>
+<h4><span id="unshift和shift">unshift和shift</span></h4>
+<ul>
+<li>如果要往Array的头部添加若干元素，使用unshift()方法，shift()方法则把Array的第一个元素删掉：</li>
+</ul>
+<h4><span id="sort">sort</span></h4>
+<ul>
+<li>sort()可以对当前Array进行排序，它会直接修改当前Array的元素位置，直接调用时，按照默认顺序排序</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> arr = [<span class="string">'B'</span>, <span class="string">'C'</span>, <span class="string">'A'</span>];</span><br><span class="line">arr.sort();</span><br><span class="line">arr; <span class="comment">// ['A', 'B', 'C']</span></span><br></pre></td></tr></table></figure>
+<h4><span id="reverse">reverse</span></h4>
+<ul>
+<li>reverse()把整个Array的元素给掉个个，也就是反转：</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> arr = [<span class="string">'one'</span>, <span class="string">'two'</span>, <span class="string">'three'</span>];</span><br><span class="line">arr.reverse(); </span><br><span class="line">arr; <span class="comment">// ['three', 'two', 'one']</span></span><br></pre></td></tr></table></figure>
+<h4><span id="splice">splice</span></h4>
+<ul>
+<li>splice()方法是修改Array的“万能方法”，它可以从指定的索引开始删除若干元素，然后再从该位置添加若干元素</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> arr = [<span class="string">'Microsoft'</span>, <span class="string">'Apple'</span>, <span class="string">'Yahoo'</span>, <span class="string">'AOL'</span>, <span class="string">'Excite'</span>, <span class="string">'Oracle'</span>];</span><br><span class="line"><span class="comment">// 从索引2开始删除3个元素,然后再添加两个元素:</span></span><br><span class="line">arr.splice(<span class="number">2</span>, <span class="number">3</span>, <span class="string">'Google'</span>, <span class="string">'Facebook'</span>); <span class="comment">// 返回删除的元素 ['Yahoo', 'AOL', 'Excite']</span></span><br><span class="line">arr; <span class="comment">// ['Microsoft', 'Apple', 'Google', 'Facebook', 'Oracle']</span></span><br><span class="line"><span class="comment">// 只删除,不添加:</span></span><br><span class="line">arr.splice(<span class="number">2</span>, <span class="number">2</span>); <span class="comment">// ['Google', 'Facebook']</span></span><br><span class="line">arr; <span class="comment">// ['Microsoft', 'Apple', 'Oracle']</span></span><br><span class="line"><span class="comment">// 只添加,不删除:</span></span><br><span class="line">arr.splice(<span class="number">2</span>, <span class="number">0</span>, <span class="string">'Google'</span>, <span class="string">'Facebook'</span>); <span class="comment">// 返回[],因为没有删除任何元素</span></span><br><span class="line">arr; <span class="comment">// ['Microsoft', 'Apple', 'Google', 'Facebook', 'Oracle']</span></span><br></pre></td></tr></table></figure>
+<h4><span id="concat">concat</span></h4>
+<ul>
+<li>concat()方法把当前的Array和另一个Array连接起来，并返回一个新的Array</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> arr = [<span class="string">'A'</span>, <span class="string">'B'</span>, <span class="string">'C'</span>];</span><br><span class="line"><span class="keyword">var</span> add = [<span class="string">'1'</span>, <span class="string">'2'</span>, <span class="string">'3'</span>];</span><br><span class="line"><span class="keyword">var</span> added = arr.concat(add);  <span class="comment">//合并两个数组</span></span><br></pre></td></tr></table></figure>
+<h4><span id="join">join</span></h4>
+<ul>
+<li>join()方法是一个非常实用的方法，它把当前Array的每个元素都用指定的字符串连接起来，然后返回连接后的字符串</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> arr = [<span class="string">'A'</span>, <span class="string">'B'</span>, <span class="string">'C'</span>, <span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>];</span><br><span class="line">arr.join(<span class="string">'-'</span>); <span class="comment">// 'A-B-C-1-2-3'</span></span><br></pre></td></tr></table></figure>
+<h4><span id="多维数组">多维数组</span></h4>
+<ul>
+<li>如果数组的某个元素又是一个Array，则可以形成多维数组</li>
+</ul>
+<hr>
+<hr>
+<h3><span id="对象">对象</span></h3>
+<ul>
+<li>
+<p>JavaScript的对象是一种无序的集合数据类型，它由若干键值对组成</p>
+</li>
+<li>
+<p>由于JavaScript的对象是动态类型，你可以自由地给一个对象添加或删除属性</p>
+</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> xiaoming = &#123;</span><br><span class="line">    name: <span class="string">'小明'</span></span><br><span class="line">&#125;;</span><br><span class="line">xiaoming.age; <span class="comment">// undefined</span></span><br><span class="line">xiaoming.age = <span class="number">18</span>; <span class="comment">// 新增一个age属性</span></span><br><span class="line">xiaoming.age; <span class="comment">// 18</span></span><br><span class="line"><span class="keyword">delete</span> xiaoming.age; <span class="comment">// 删除age属性</span></span><br><span class="line">xiaoming.age; <span class="comment">// undefined</span></span><br><span class="line"><span class="keyword">delete</span> xiaoming[<span class="string">'name'</span>]; <span class="comment">// 删除name属性</span></span><br><span class="line">xiaoming.name; <span class="comment">// undefined</span></span><br><span class="line"><span class="keyword">delete</span> xiaoming.school; <span class="comment">// 删除一个不存在的school属性也不会报错</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li>如果我们要检测xiaoming是否拥有某一属性，可以用in操作符</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">'name'</span> <span class="keyword">in</span> xiaoming; <span class="comment">// true</span></span><br><span class="line"><span class="string">'grade'</span> <span class="keyword">in</span> xiaoming; <span class="comment">// false</span></span><br></pre></td></tr></table></figure>
+<h4><span id="hasownproperty">hasOwnProperty()</span></h4>
+<ul>
+<li>toString定义在object对象中，而所有对象最终都会在原型链上指向object，</li>
+<li>所以xiaoming也拥有toString属性。</li>
+<li>要判断一个属性是否是xiaoming自身拥有的，而不是继承得到的，可以用hasOwnProperty()方法</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> xiaoming = &#123;</span><br><span class="line">    name: <span class="string">'小明'</span></span><br><span class="line">&#125;;</span><br><span class="line">xiaoming.hasOwnProperty(<span class="string">'name'</span>); <span class="comment">// true</span></span><br><span class="line">xiaoming.hasOwnProperty(<span class="string">'toString'</span>); <span class="comment">// false</span></span><br></pre></td></tr></table></figure>
+<h3><span id="条件判断">条件判断</span></h3>
+<p>if () {</p>
+<p>} else if () {</p>
+<p>} else {</p>
+<p>}</p>
+<h3><span id="循环">循环</span></h3>
+<ul>
+<li>for循环的3个条件都是可以省略的，如果没有退出循环的判断条件，</li>
+<li>就必须使用break语句退出循环，否则就是死循环</li>
+</ul>
+<h4><span id="for-in">for … in</span></h4>
+<ul>
+<li>for循环的一个变体是for … in循环，它可以把一个对象的所有属性依次循环出来</li>
+<li>要过滤掉对象继承的属性，用hasOwnProperty()来实现：</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> o = &#123;</span><br><span class="line">    name: <span class="string">'Jack'</span>,</span><br><span class="line">    age: <span class="number">20</span>,</span><br><span class="line">    city: <span class="string">'Beijing'</span></span><br><span class="line">&#125;;</span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">var</span> key <span class="keyword">in</span> o) &#123;</span><br><span class="line">    <span class="keyword">if</span> (o.hasOwnProperty(key)) &#123;</span><br><span class="line">        alert(key); <span class="comment">// 'name', 'age', 'city'</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4><span id="while">while</span></h4>
+<ul>
+<li>for循环在已知循环的初始和结束条件时非常有用。而上述忽略了条件的for循环容易让人看不清循环的逻辑，此时用while循环更佳</li>
+<li>while循环只有一个判断条件，条件满足，就不断循环，条件不满足时则退出循环。比如我们要计算100以内所有奇数之和，可以用while循环实现：</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> x = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">var</span> n = <span class="number">99</span>;</span><br><span class="line">        <span class="keyword">while</span> (n &gt; <span class="number">0</span>) &#123;</span><br><span class="line">            x = x + n;</span><br><span class="line">            n = n - <span class="number">2</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        alert(x);</span><br></pre></td></tr></table></figure>
+<h4><span id="do-while">do … while</span></h4>
+<ul>
+<li>最后一种循环是do { … } while()循环，它和while循环的唯一区别在于，不是在每次循环开始的时候判断条件，而是在每次循环完成的时候判断条件</li>
+<li>用do { … } while()循环要小心，循环体会至少执行1次，而for和while循环则可能一次都不执行</li>
+</ul>
+<hr>
+<hr>
+<h3><span id="map">Map</span></h3>
+<ul>
+<li>Map是一组键值对的结构，具有极快的查找速度。</li>
+<li>快速查找</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> m = <span class="keyword">new</span> <span class="built_in">Map</span>([[<span class="string">'Michael'</span>, <span class="number">95</span>], [<span class="string">'Bob'</span>, <span class="number">75</span>], [<span class="string">'Tracy'</span>, <span class="number">85</span>]]);</span><br><span class="line">m.get(<span class="string">'Michael'</span>); <span class="comment">// 95</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> m = <span class="keyword">new</span> <span class="built_in">Map</span>(); <span class="comment">// 空Map</span></span><br><span class="line">m.set(<span class="string">'Adam'</span>, <span class="number">67</span>); <span class="comment">// 添加新的key-value</span></span><br><span class="line">m.set(<span class="string">'Bob'</span>, <span class="number">59</span>);</span><br><span class="line">m.has(<span class="string">'Adam'</span>); <span class="comment">// 是否存在key 'Adam': true</span></span><br><span class="line">m.get(<span class="string">'Adam'</span>); <span class="comment">// 67</span></span><br><span class="line">m.delete(<span class="string">'Adam'</span>); <span class="comment">// 删除key 'Adam'</span></span><br><span class="line">m.get(<span class="string">'Adam'</span>); <span class="comment">// undefined</span></span><br></pre></td></tr></table></figure>
+<h3><span id="set">Set</span></h3>
+<ul>
+<li>
+<p>Set和Map类似，也是一组key的集合，但不存储value。由于key不能重复，所以，在Set中，没有重复的key。</p>
+</li>
+<li>
+<p>要创建一个Set，需要提供一个Array作为输入，或者直接创建一个空Set</p>
+</li>
+<li>
+<p>通过add(key)方法可以添加元素到Set中，可以重复添加，但不会有效果</p>
+</li>
+<li>
+<p>通过delete(key)方法可以删除元素</p>
+</li>
+</ul>
+<hr>
+<hr>
+<h3><span id="iterable">iterable</span></h3>
+<ul>
+<li>遍历Array可以采用下标循环，遍历Map和Set就无法使用下标。为了统一集合类型，ES6标准引入了新的iterable类型，Array、Map和Set都属于iterable类型</li>
+<li>具有iterable类型的集合可以通过新的for … of循环来遍历。</li>
+</ul>
+<ul>
+<li>
+<p>for … in循环将把name包括在内，但Array的length属性却不包括在内。</p>
+</li>
+<li>
+<p>for … of循环则完全修复了这些问题，它只循环集合本身的元素</p>
+</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a = [<span class="string">'A'</span>, <span class="string">'B'</span>, <span class="string">'C'</span>];</span><br><span class="line">a.name = <span class="string">'Hello'</span>;</span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">var</span> x <span class="keyword">in</span> a) &#123;</span><br><span class="line">    alert(x); <span class="comment">// '0', '1', '2', 'name'</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> a = [<span class="string">'A'</span>, <span class="string">'B'</span>, <span class="string">'C'</span>];</span><br><span class="line">a.name = <span class="string">'Hello'</span>;</span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">var</span> x <span class="keyword">of</span> a) &#123;</span><br><span class="line">    alert(x); <span class="string">'A'</span>, <span class="string">'B'</span>, <span class="string">'C'</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4><span id="foreach">forEach</span></h4>
+<ul>
+<li>更好的方式是直接使用iterable内置的forEach方法，它接收一个函数，每次迭代就自动回调该函数。以Array为例</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a = [<span class="string">'A'</span>, <span class="string">'B'</span>, <span class="string">'C'</span>];</span><br><span class="line">a.forEach(<span class="function"><span class="keyword">function</span> (<span class="params">element, index, array</span>) </span>&#123;</span><br><span class="line">    <span class="comment">// element: 指向当前元素的值</span></span><br><span class="line">    <span class="comment">// index: 指向当前索引</span></span><br><span class="line">    <span class="comment">// array: 指向Array对象本身</span></span><br><span class="line">    alert(element);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<ul>
+<li>Set与Array类似，但Set没有索引，因此回调函数的前两个参数都是元素本身</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> s = <span class="keyword">new</span> <span class="built_in">Set</span>([<span class="string">'A'</span>, <span class="string">'B'</span>, <span class="string">'C'</span>]);</span><br><span class="line">s.forEach(<span class="function"><span class="keyword">function</span> (<span class="params">element, sameElement, set</span>) </span>&#123;</span><br><span class="line">    alert(element);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<ul>
+<li>Map的回调函数参数依次为value、key和map本身</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> m = <span class="keyword">new</span> <span class="built_in">Map</span>([[<span class="number">1</span>, <span class="string">'x'</span>], [<span class="number">2</span>, <span class="string">'y'</span>], [<span class="number">3</span>, <span class="string">'z'</span>]]);</span><br><span class="line">m.forEach(<span class="function"><span class="keyword">function</span> (<span class="params">value, key, map</span>) </span>&#123;</span><br><span class="line">    alert(value);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<hr>
+<hr>
+<h1><span id="函数">函数</span></h1>
+<h3><span id="arguments">arguments</span></h3>
+<ul>
+<li>它只在函数内部起作用，并且永远指向当前函数的调用者传入的所有参数</li>
+<li>利用arguments，你可以获得调用者传入的所有参数。也就是说，即使函数不定义任何参数，还是可以拿到参数的值</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">abs</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (<span class="built_in">arguments</span>.length === <span class="number">0</span>) &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">var</span> x = <span class="built_in">arguments</span>[<span class="number">0</span>];</span><br><span class="line">    <span class="keyword">return</span> x &gt;= <span class="number">0</span> ? x : -x;</span><br><span class="line">&#125;</span><br><span class="line">abs(); <span class="comment">// 0</span></span><br><span class="line">abs(<span class="number">10</span>); <span class="comment">// 10</span></span><br><span class="line">abs(<span class="number">-9</span>); <span class="comment">// 9</span></span><br></pre></td></tr></table></figure>
+<h3><span id="rest参数">rest参数</span></h3>
+<ul>
+<li>由于JavaScript函数允许接收任意个参数，于是我们就不得不用arguments来获取所有参数</li>
+<li>rest参数只能写在最后，前面用…标识，从运行结果可知，传入的参数先绑定a、b，</li>
+<li>多余的参数以数组形式交给变量rest，所以，不再需要arguments我们就获取了全部参</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">ction foo(a, b, ...rest) &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'a = '</span> + a);</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'b = '</span> + b);</span><br><span class="line">    <span class="built_in">console</span>.log(rest);</span><br><span class="line">&#125;</span><br><span class="line">foo(<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>);</span><br><span class="line"><span class="comment">// 结果:</span></span><br><span class="line"><span class="comment">// a = 1</span></span><br><span class="line"><span class="comment">// b = 2</span></span><br><span class="line"><span class="comment">// Array [ 3, 4, 5 ]</span></span><br></pre></td></tr></table></figure>
+<h2><span id="变量作用域">变量作用域</span></h2>
+<ul>
+<li>在JavaScript中，用var申明的变量实际上是有作用域的。</li>
+<li>如果一个变量在函数体内部申明，则该变量的作用域为整个函数体，在函数体外不可引用该变量</li>
+<li>由于JavaScript的函数可以嵌套，此时，内部函数可以访问外部函数定义的变量，反过来则不行：</li>
+<li>如果内部函数定义了与外部函数重名的变量，则内部函数的变量将“屏蔽”外部函数的变量。</li>
+</ul>
+<h3><span id="变量提升">变量提升</span></h3>
+<ul>
+<li>JavaScript的函数定义有个特点，它会先扫描整个函数体的语句，把所有申明的变量“提升”到函数顶部</li>
+<li>请严格遵守“在函数内部首先申明所有变量”这一规则</li>
+<li>最常见的做法是用一个var申明函数内部用到的所有变量：</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">foo</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span></span><br><span class="line">        x = <span class="number">1</span>, <span class="comment">// x初始化为1</span></span><br><span class="line">        y = x + <span class="number">1</span>, <span class="comment">// y初始化为2</span></span><br><span class="line">        z, i; <span class="comment">// z和i为undefined</span></span><br><span class="line">    <span class="comment">// 其他语句:</span></span><br><span class="line">    <span class="keyword">for</span> (i=<span class="number">0</span>; i&lt;<span class="number">100</span>; i++) &#123;</span><br><span class="line">        ...</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3><span id="全局作用域">全局作用域</span></h3>
+<ul>
+<li>
+<p>不在任何函数内定义的变量就具有全局作用域。实际上，JavaScript默认有一个全局对象window，</p>
+</li>
+<li>
+<p>全局作用域的变量实际上被绑定到window的一个属性</p>
+</li>
+<li>
+<p>这说明JavaScript实际上只有一个全局作用域。任何变量（函数也视为变量），如果没有在当前函数作用域中找到，</p>
+</li>
+<li>
+<p>就会继续往上查找，最后如果在全局作用域中也没有找到，则报ReferenceError错误</p>
+</li>
+</ul>
+<h3><span id="名字空间">名字空间</span></h3>
+<ul>
+<li>减少冲突的一个方法是把自己的所有变量和函数全部绑定到一个全局变量中</li>
+<li>把自己的代码全部放入唯一的名字空间MYAPP中，会大大减少全局变量冲突的可能</li>
+</ul>
+<h3><span id="局部作用域">局部作用域</span></h3>
+<ul>
+<li>为了解决块级作用域，ES6引入了新的关键字let，用let替代var可以申明一个块级作用域的变量</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">foo</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> sum = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">let</span> i=<span class="number">0</span>; i&lt;<span class="number">100</span>; i++) &#123;</span><br><span class="line">        sum += i;</span><br><span class="line">    &#125;</span><br><span class="line">    i += <span class="number">1</span>; <span class="comment">// SyntaxError</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3><span id="常量">常量</span></h3>
+<ul>
+<li>ES6标准引入了新的关键字const来定义常量，const与let都具有块级作用域</li>
+</ul>
+<hr>
+<hr>
+<h2><span id="方法">方法</span></h2>
+<ul>
+<li>在一个对象中绑定函数，称为这个对象的方法</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> xiaoming = &#123;</span><br><span class="line">        name: <span class="string">'小明'</span>,</span><br><span class="line">        birth: <span class="number">1990</span>,</span><br><span class="line">        age: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">            <span class="keyword">var</span> y = <span class="keyword">new</span> <span class="built_in">Date</span>().getFullYear();</span><br><span class="line">            alert( y - <span class="keyword">this</span>.birth );</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">// xiaoming.age;</span></span><br><span class="line">    xiaoming.age();</span><br></pre></td></tr></table></figure>
+<ul>
+<li>修复的this办法指向，我们用一个that变量首先捕获this</li>
+<li>用var that = this;，你就可以放心地在方法内部定义其他函数，而不是把所有语句都堆到一个方法中</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">'use strict'</span>;</span><br><span class="line"><span class="keyword">var</span> xiaoming = &#123;</span><br><span class="line">    name: <span class="string">'小明'</span>,</span><br><span class="line">    birth: <span class="number">1990</span>,</span><br><span class="line">    age: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">        <span class="keyword">var</span> that = <span class="keyword">this</span>; <span class="comment">// 在方法内部一开始就捕获this</span></span><br><span class="line">        <span class="function"><span class="keyword">function</span> <span class="title">getAgeFromBirth</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">            <span class="keyword">var</span> y = <span class="keyword">new</span> <span class="built_in">Date</span>().getFullYear();</span><br><span class="line">            <span class="keyword">return</span> y - that.birth; <span class="comment">// 用that而不是this</span></span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> getAgeFromBirth();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line">xiaoming.age(); <span class="comment">// 25</span></span><br></pre></td></tr></table></figure>
+<h3><span id="apply">apply</span></h3>
+<ul>
+<li>要指定函数的this指向哪个对象，可以用函数本身的apply方法，它接收两个参数，</li>
+<li>第一个参数就是需要绑定的this变量，第二个参数是Array，表示函数本身的参数</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">getAge.apply(xiaoming, []);</span><br></pre></td></tr></table></figure>
+<h3><span id="call">call()</span></h3>
+<ul>
+<li>apply()类似的方法是call()，唯一区别是</li>
+</ul>
+<ol>
+<li>apply()把参数打包成Array再传入；</li>
+<li>call()把参数按顺序传入。</li>
+</ol>
+<ul>
+<li>比如调用Math.max(3, 5, 4)，分别用apply()和call()实现如下：</li>
+</ul>
+<ol>
+<li>Math.max.apply(null, [3, 5, 4]); // 5</li>
+<li>Math.max.call(null, 3, 5, 4); // 5</li>
+</ol>
+<h3><span id="装饰器">装饰器</span></h3>
+<ul>
+<li>利用apply()，我们还可以动态改变函数的行为。</li>
+<li>现在假定我们想统计一下代码一共调用了多少次parseInt()</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> count = <span class="number">0</span>;</span><br><span class="line"><span class="keyword">var</span> oldParseInt = <span class="built_in">parseInt</span>; <span class="comment">// 保存原函数</span></span><br><span class="line"><span class="built_in">window</span>.parseInt = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    count += <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">return</span> oldParseInt.apply(<span class="literal">null</span>, <span class="built_in">arguments</span>); <span class="comment">// 调用原函数</span></span><br><span class="line">&#125;;</span><br><span class="line"><span class="comment">// 测试:</span></span><br><span class="line"><span class="built_in">parseInt</span>(<span class="string">'10'</span>);</span><br><span class="line"><span class="built_in">parseInt</span>(<span class="string">'20'</span>);</span><br><span class="line"><span class="built_in">parseInt</span>(<span class="string">'30'</span>);</span><br><span class="line">count; <span class="comment">// 3</span></span><br></pre></td></tr></table></figure>
+<hr>
+<hr>
+<h2><span id="高阶函数">高阶函数</span></h2>
+<ul>
+<li>JavaScript的函数其实都指向某个变量。既然变量可以指向函数，函数的参数能接收变量，那么一个函数就可以接收另一个函数作为参数，这种函数就称之为高阶函数。</li>
+<li>一个最简单的高阶函数：</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">add</span>(<span class="params">x, y, f</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> f(x) + f(y)</span><br><span class="line">&#125;</span><br><span class="line">add(<span class="number">-5</span>, <span class="number">6</span>, <span class="built_in">Math</span>.abs)</span><br></pre></td></tr></table></figure>
+<ul>
+<li>编写高阶函数，就是让函数的参数能够接收别的函数</li>
+</ul>
+<h3><span id="map">map</span></h3>
+<ul>
+<li>由于map()方法定义在JavaScript的Array中，我们调用Array的map()方法，传入我们自己的函数，就得到了一个新的Array作为结果</li>
+<li>map()作为高阶函数，事实上它把运算规则抽象了，因此，我们不但可以计算简单的f(x)=x<sup>2</sup>，还可以计算任意复杂的函数</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">pow</span>(<span class="params">x</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> x * x;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> arr = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>, <span class="number">6</span>, <span class="number">7</span>, <span class="number">8</span>, <span class="number">9</span>];</span><br><span class="line">arr.map(pow); <span class="comment">// [1, 4, 9, 16, 25, 36, 49, 64, 81]</span></span><br></pre></td></tr></table></figure>
+<h2><span id="reduce">reduce</span></h2>
+<ul>
+<li>Array的reduce()把一个函数作用在这个Array的[x1, x2, x3…]上，这个函数必须接收两个参数</li>
+<li>reduce()把结果继续和序列的下一个元素做累积计算，其效果就是</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[x1, x2, x3, x4].reduce(f) = f(f(f(x1, x2), x3), x4)</span><br></pre></td></tr></table></figure>
+<ul>
+<li>比方说对一个Array求和，就可以用reduce实现</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> arr = [<span class="number">1</span>, <span class="number">3</span>, <span class="number">5</span>, <span class="number">7</span>, <span class="number">9</span>];</span><br><span class="line">arr.reduce(<span class="function"><span class="keyword">function</span> (<span class="params">x, y</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> x + y;</span><br><span class="line">&#125;); <span class="comment">// 25</span></span><br></pre></td></tr></table></figure>
+<h2><span id="filter">filter</span></h2>
+<ul>
+<li>和map()类似，Array的filter()也接收一个函数。和map()不同的是，</li>
+<li>filter()把传入的函数依次作用于每个元素，然后根据返回值是true还是false决定保留还是丢弃该元素</li>
+</ul>
+
+                
+
+                <hr>
+                <!-- Pager -->
+                <ul class="pager">
+                    
+                    
+                        <li class="next">
+                            <a href="/2019/12/13/HTML/" data-toggle="tooltip" data-placement="top" title="HTML">Next Post &rarr;</a>
+                        </li>
+                    
+                </ul>
+
+                <!-- duoshuo Share start -->
+                
+                <!-- 多说 Share end-->
+
+                <!-- 多说评论框 start -->
+                
+                <!-- 多说评论框 end -->
+
+                <!-- disqus comment start -->
+                
+                    <div class="comment">
+                        <div id="disqus_thread" class="disqus-thread"></div>
+                    </div>
+                
+                <!-- disqus comment end -->
+            </div>
+            
+            <!-- Tabe of Content -->
+            <!-- Table of Contents -->
+
+    
+      <aside id="sidebar">
+        <div id="toc" class="toc-article">
+        <strong class="toc-title">Contents</strong>
+        
+          <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#null"><span class="toc-nav-number">1.</span> <span class="toc-nav-text">数据类型</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#null"><span class="toc-nav-number">1.1.</span> <span class="toc-nav-text">Number</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#null"><span class="toc-nav-number">1.2.</span> <span class="toc-nav-text">字符串</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#null"><span class="toc-nav-number">1.3.</span> <span class="toc-nav-text">布尔型</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#null"><span class="toc-nav-number">1.4.</span> <span class="toc-nav-text">比较运算符</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#null"><span class="toc-nav-number">1.5.</span> <span class="toc-nav-text">null和undefined</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#null"><span class="toc-nav-number">1.6.</span> <span class="toc-nav-text">数组</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#null"><span class="toc-nav-number">1.7.</span> <span class="toc-nav-text">对象</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#null"><span class="toc-nav-number">1.8.</span> <span class="toc-nav-text">变量</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#null"><span class="toc-nav-number">1.9.</span> <span class="toc-nav-text">strict模式</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#null"><span class="toc-nav-number">1.10.</span> <span class="toc-nav-text">字符串</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#null"><span class="toc-nav-number">1.10.0.1.</span> <span class="toc-nav-text">toUpperCase</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#null"><span class="toc-nav-number">1.10.0.2.</span> <span class="toc-nav-text">toLowerCase</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#null"><span class="toc-nav-number">1.10.0.3.</span> <span class="toc-nav-text">indexOf</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#null"><span class="toc-nav-number">1.10.0.4.</span> <span class="toc-nav-text">substring</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#null"><span class="toc-nav-number">1.10.1.</span> <span class="toc-nav-text">数组</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#null"><span class="toc-nav-number">1.10.1.1.</span> <span class="toc-nav-text">indexOf</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#null"><span class="toc-nav-number">1.10.1.2.</span> <span class="toc-nav-text">slice</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#null"><span class="toc-nav-number">1.10.1.3.</span> <span class="toc-nav-text">push和pop</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#null"><span class="toc-nav-number">1.10.1.4.</span> <span class="toc-nav-text">unshift和shift</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#null"><span class="toc-nav-number">1.10.1.5.</span> <span class="toc-nav-text">sort</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#null"><span class="toc-nav-number">1.10.1.6.</span> <span class="toc-nav-text">reverse</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#null"><span class="toc-nav-number">1.10.1.7.</span> <span class="toc-nav-text">splice</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#null"><span class="toc-nav-number">1.10.1.8.</span> <span class="toc-nav-text">concat</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#null"><span class="toc-nav-number">1.10.1.9.</span> <span class="toc-nav-text">join</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#null"><span class="toc-nav-number">1.10.1.10.</span> <span class="toc-nav-text">多维数组</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#null"><span class="toc-nav-number">1.10.2.</span> <span class="toc-nav-text">对象</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#null"><span class="toc-nav-number">1.10.2.1.</span> <span class="toc-nav-text">hasOwnProperty()</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#null"><span class="toc-nav-number">1.10.3.</span> <span class="toc-nav-text">条件判断</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#null"><span class="toc-nav-number">1.10.4.</span> <span class="toc-nav-text">循环</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#null"><span class="toc-nav-number">1.10.4.1.</span> <span class="toc-nav-text">for … in</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#null"><span class="toc-nav-number">1.10.4.2.</span> <span class="toc-nav-text">while</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#null"><span class="toc-nav-number">1.10.4.3.</span> <span class="toc-nav-text">do … while</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#null"><span class="toc-nav-number">1.10.5.</span> <span class="toc-nav-text">Map</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#null"><span class="toc-nav-number">1.10.6.</span> <span class="toc-nav-text">Set</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#null"><span class="toc-nav-number">1.10.7.</span> <span class="toc-nav-text">iterable</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#null"><span class="toc-nav-number">1.10.7.1.</span> <span class="toc-nav-text">forEach</span></a></li></ol></li></ol></li></ol></li><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#null"><span class="toc-nav-number">2.</span> <span class="toc-nav-text">函数</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#null"><span class="toc-nav-number">2.0.1.</span> <span class="toc-nav-text">arguments</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#null"><span class="toc-nav-number">2.0.2.</span> <span class="toc-nav-text">rest参数</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#null"><span class="toc-nav-number">2.1.</span> <span class="toc-nav-text">变量作用域</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#null"><span class="toc-nav-number">2.1.1.</span> <span class="toc-nav-text">变量提升</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#null"><span class="toc-nav-number">2.1.2.</span> <span class="toc-nav-text">全局作用域</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#null"><span class="toc-nav-number">2.1.3.</span> <span class="toc-nav-text">名字空间</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#null"><span class="toc-nav-number">2.1.4.</span> <span class="toc-nav-text">局部作用域</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#null"><span class="toc-nav-number">2.1.5.</span> <span class="toc-nav-text">常量</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#null"><span class="toc-nav-number">2.2.</span> <span class="toc-nav-text">方法</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#null"><span class="toc-nav-number">2.2.1.</span> <span class="toc-nav-text">apply</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#null"><span class="toc-nav-number">2.2.2.</span> <span class="toc-nav-text">call()</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#null"><span class="toc-nav-number">2.2.3.</span> <span class="toc-nav-text">装饰器</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#null"><span class="toc-nav-number">2.3.</span> <span class="toc-nav-text">高阶函数</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#null"><span class="toc-nav-number">2.3.1.</span> <span class="toc-nav-text">map</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#null"><span class="toc-nav-number">2.4.</span> <span class="toc-nav-text">reduce</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#null"><span class="toc-nav-number">2.5.</span> <span class="toc-nav-text">filter</span></a></li></ol></li></ol>
+        
+        </div>
+      </aside>
+    
+
+                
+            <!-- Sidebar Container -->
+            <div class="
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                sidebar-container">
+
+                <!-- Featured Tags -->
+                
+                <section>
+                    <!-- no hr -->
+                    <h5><a href="/tags/">FEATURED TAGS</a></h5>
+                    <div class="tags">
+                       
+                          <a class="tag" href="/tags/#js" title="js">js</a>
+                        
+                    </div>
+                </section>
+                
+
+                <!-- Friends Blog -->
+                
+                <hr>
+                <h5>FRIENDS</h5>
+                <ul class="list-inline">
+
+                    
+                        <li><a href="http://beantech.org" target="_blank">Bean Tech</a></li>
+                    
+                        <li><a href="http://blog.kaijun.rocks" target="_blank">Kaijun&#39;s Blog</a></li>
+                    
+                        <li><a href="http://huangxuan.me" target="_blank">Hux Blog</a></li>
+                    
+                        <li><a href="#" target="_blank">It Helps SEO</a></li>
+                    
+                </ul>
+                
+            </div>
+        </div>
+    </div>
+</article>
+
+
+
+
+<!-- disqus embedded js code start (one page only need to embed once) -->
+<script type="text/javascript">
+    /* * * CONFIGURATION VARIABLES * * */
+    var disqus_shortname = "your-disqus-ID";
+    var disqus_identifier = "http://yoursite-url/2019/12/13/JavaScript/";
+    var disqus_url = "http://yoursite-url/2019/12/13/JavaScript/";
+
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<!-- disqus embedded js code start end -->
+
+
+
+
+<!-- async load function -->
+<script>
+    function async(u, c) {
+      var d = document, t = 'script',
+          o = d.createElement(t),
+          s = d.getElementsByTagName(t)[0];
+      o.src = u;
+      if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+      s.parentNode.insertBefore(o, s);
+    }
+</script>
+<!-- anchor-js, Doc:http://bryanbraun.github.io/anchorjs/ -->
+<script>
+    async("https://cdn.bootcss.com/anchor-js/1.1.1/anchor.min.js",function(){
+        anchors.options = {
+          visible: 'hover',
+          placement: 'left',
+          icon: 'ℬ'
+        };
+        anchors.add().remove('.intro-header h1').remove('.subheading').remove('.sidebar-container h5');
+    })
+</script>
+<style>
+    /* place left on bigger screen */
+    @media all and (min-width: 800px) {
+        .anchorjs-link{
+            position: absolute;
+            left: -0.75em;
+            font-size: 1.1em;
+            margin-top : -0.1em;
+        }
+    }
+</style>
+
+
+
+    <!-- Footer -->
+    <!-- Footer -->
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <ul class="list-inline text-center">
+                
+                
+                
+                    <li>
+                        <a target="_blank" href="https://www.zhihu.com/people/Demonbane">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa  fa-stack-1x fa-inverse">知</i>
+                            </span>
+                        </a>
+                    </li>
+                
+
+                
+                    <li>
+                        <a target="_blank" href="http://weibo.com/Demonbaneen">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-weibo fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                
+
+                
+
+                
+                    <li>
+                        <a target="_blank"  href="https://github.com/LHTon">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                
+
+                
+
+                </ul>
+                <p class="copyright text-muted">
+                    Copyright &copy; LHTon 2019 
+                    <br>
+                    Theme by <a href="http://huangxuan.me">Hux</a> 
+                    <span style="display: inline-block; margin: 0 5px;">
+                        <i class="fa fa-heart"></i>
+                    </span> 
+                    re-Ported by <a href="http://beantech.org">BeanTech</a> | 
+                    <iframe
+                        style="margin-left: 2px; margin-bottom:-5px;"
+                        frameborder="0" scrolling="0" width="91px" height="20px"
+                        src="https://ghbtns.com/github-btn.html?user=YenYuHsuan&repo=hexo-theme-beantech&type=star&count=true" >
+                    </iframe>
+                </p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- jQuery -->
+<script src="/js/jquery.min.js"></script>
+
+<!-- Bootstrap Core JavaScript -->
+<script src="/js/bootstrap.min.js"></script>
+
+<!-- Custom Theme JavaScript -->
+<script src="/js/hux-blog.min.js"></script>
+
+
+<!-- async load function -->
+<script>
+    function async(u, c) {
+      var d = document, t = 'script',
+          o = d.createElement(t),
+          s = d.getElementsByTagName(t)[0];
+      o.src = u;
+      if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+      s.parentNode.insertBefore(o, s);
+    }
+</script>
+
+<!-- 
+     Because of the native support for backtick-style fenced code blocks 
+     right within the Markdown is landed in Github Pages, 
+     From V1.6, There is no need for Highlight.js, 
+     so Huxblog drops it officially.
+
+     - https://github.com/blog/2100-github-pages-now-faster-and-simpler-with-jekyll-3-0  
+     - https://help.github.com/articles/creating-and-highlighting-code-blocks/    
+-->
+<!--
+    <script>
+        async("http://cdn.bootcss.com/highlight.js/8.6/highlight.min.js", function(){
+            hljs.initHighlightingOnLoad();
+        })
+    </script>
+    <link href="http://cdn.bootcss.com/highlight.js/8.6/styles/github.min.css" rel="stylesheet">
+-->
+
+
+<!-- jquery.tagcloud.js -->
+<script>
+    // only load tagcloud.js in tag.html
+    if($('#tag_cloud').length !== 0){
+        async("http://yoursite-url/js/jquery.tagcloud.js",function(){
+            $.fn.tagcloud.defaults = {
+                //size: {start: 1, end: 1, unit: 'em'},
+                color: {start: '#bbbbee', end: '#0085a1'},
+            };
+            $('#tag_cloud a').tagcloud();
+        })
+    }
+</script>
+
+<!--fastClick.js -->
+<script>
+    async("https://cdn.bootcss.com/fastclick/1.0.6/fastclick.min.js", function(){
+        var $nav = document.querySelector("nav");
+        if($nav) FastClick.attach($nav);
+    })
+</script>
+
+
+<!-- Google Analytics -->
+
+
+<script>
+    // dynamic User by Hux
+    var _gaId = 'UA-XXXXXXXX-X';
+    var _gaDomain = 'yoursite';
+
+    // Originial
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', _gaId, _gaDomain);
+    ga('send', 'pageview');
+</script>
+
+
+
+
+<!-- Baidu Tongji -->
+
+
+
+
+
+
+	<a id="rocket" href="#top" class=""></a>
+	<script type="text/javascript" src="/js/totop.js?v=1.0.0" async=""></script>
+    <script type="text/javascript" src="/js/toc.js?v=1.0.0" async=""></script>
+<!-- Image to hack wechat -->
+<img src="http://yoursite-url/img/icon_wechat.png" width="0" height="0" />
+<!-- Migrate from head to bottom, no longer block render and still work -->
+
+</body>
+
+</html>
