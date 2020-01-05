@@ -7,6 +7,22 @@
     </url>
 
     <url>
+        <loc>http://yoursite-url/2019/11/12/redis/</loc>
+        <lastmod>2020-01-03T03:15:26.171Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://yoursite-url/2019/12/15/python/</loc>
+        <lastmod>2019-12-15T09:20:28.652Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
         <loc>http://yoursite-url/2019/09/30/tp5%E7%AC%94%E8%AE%B0/</loc>
         <lastmod>2019-12-14T12:36:29.357Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -41,14 +57,6 @@
     <url>
         <loc>http://yoursite-url/2019/11/11/laravel/</loc>
         <lastmod>2019-12-13T07:36:09.978Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>http://yoursite-url/2019/11/12/redis/</loc>
-        <lastmod>2019-12-13T07:36:09.943Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 

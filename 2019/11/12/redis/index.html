@@ -266,6 +266,72 @@ Redis可以使用两种方式实现持久化过程。定时快照（snapshot）�
 第二种方式基于语句追加（aof）：只追踪变化的数据，但是追加的1og可能过大，<br><br>
 同时所有的操作均重新执行一遍，回复速度慢。<br>
 2.耗内存，占用内存过高。</p>
+<h2><span id="redis需要修改的配置">redis需要修改的配置</span></h2>
+<ul>
+<li>在 bind 127.0.0.1 前面加# 注释掉</li>
+<li>开启redis的密码： #requirepass foobared 修改为:requirepass 123456 自己设的密码</li>
+</ul>
+<h2><span id="启动服务端和客户端">启动服务端和客户端</span></h2>
+<ul>
+<li>客户端 ：  ./bin/redis-cli</li>
+<li>服务端 ： ./bin/redis-server ./redis-conf</li>
+</ul>
+<h2><span id="经常用的命令行">经常用的命令行</span></h2>
+<ul>
+<li>查看大的文件时</li>
+</ul>
+<blockquote>
+<p>less -mN 文件名</p>
+</blockquote>
+<ul>
+<li>编辑文件时</li>
+</ul>
+<blockquote>
+<p>vim 文件名</p>
+</blockquote>
+<ul>
+<li>查看进程</li>
+</ul>
+<blockquote>
+<p>ps -ef |grep -i redis</p>
+</blockquote>
+<ul>
+<li>编辑redis</li>
+</ul>
+<blockquote>
+<p>./bin/redis-cli -a 123456<br>
+redis-cli -h IP地址 -P 端口 -a 密码</p>
+</blockquote>
+<ul>
+<li>redis键key</li>
+</ul>
+<blockquote>
+<p>del key  删除key<br>
+dump key  序列化给定key,并返回序列化的值<br>
+exists key 检查给定key是否存在<br>
+<strong>expire key seconds</strong> 为给定设置过期时间（以秒计）<br>
+<strong>pexpire key milliseconds</strong> 设置key的过期时间（以毫秒计）<br>
+ttl key 以秒为单位，返回给定key的剩余生存时间（TTL, time to live）<br>
+pttl key 以毫秒为单位，返回key的剩余的过期时间<br>
+<strong>getrange key start end</strong>   eg: getrange a 0 3  截取字段<br>
+incr topic:num 自增加1<br>
+incrby topic:num 10  可以按照你填的数值增加<br>
+decrby topic:num 10  可以按照你填的数值递减</p>
+</blockquote>
+<h2><span id="命名的规范">命名的规范</span></h2>
+<ul>
+<li>users:123:password  用：号</li>
+</ul>
+<h2><span id="哈希">哈希</span></h2>
+<ul>
+<li>Hash:适合存一个对象</li>
+<li>Users(id,name,age,remark);</li>
+<li>eg: hset h1 name zhangsan</li>
+</ul>
+<h3><span id="hash命令">Hash命令</span></h3>
+<ul>
+<li>hmset key field value 同时将多个field-value对设置到哈希表key中</li>
+</ul>
 
                 
 
@@ -309,7 +375,7 @@ Redis可以使用两种方式实现持久化过程。定时快照（snapshot）�
         <div id="toc" class="toc-article">
         <strong class="toc-title">Contents</strong>
         
-          <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#null"><span class="toc-nav-number">1.</span> <span class="toc-nav-text">redis</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#null"><span class="toc-nav-number">1.1.</span> <span class="toc-nav-text">特点</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#null"><span class="toc-nav-number">1.2.</span> <span class="toc-nav-text">简介</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#null"><span class="toc-nav-number">1.3.</span> <span class="toc-nav-text">总结</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#null"><span class="toc-nav-number">1.4.</span> <span class="toc-nav-text">优点</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#null"><span class="toc-nav-number">1.5.</span> <span class="toc-nav-text">缺点</span></a></li></ol></li></ol>
+          <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#null"><span class="toc-nav-number">1.</span> <span class="toc-nav-text">redis</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#null"><span class="toc-nav-number">1.1.</span> <span class="toc-nav-text">特点</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#null"><span class="toc-nav-number">1.2.</span> <span class="toc-nav-text">简介</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#null"><span class="toc-nav-number">1.3.</span> <span class="toc-nav-text">总结</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#null"><span class="toc-nav-number">1.4.</span> <span class="toc-nav-text">优点</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#null"><span class="toc-nav-number">1.5.</span> <span class="toc-nav-text">缺点</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#null"><span class="toc-nav-number">1.6.</span> <span class="toc-nav-text">redis需要修改的配置</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#null"><span class="toc-nav-number">1.7.</span> <span class="toc-nav-text">启动服务端和客户端</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#null"><span class="toc-nav-number">1.8.</span> <span class="toc-nav-text">经常用的命令行</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#null"><span class="toc-nav-number">1.9.</span> <span class="toc-nav-text">命名的规范</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#null"><span class="toc-nav-number">1.10.</span> <span class="toc-nav-text">哈希</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#null"><span class="toc-nav-number">1.10.1.</span> <span class="toc-nav-text">Hash命令</span></a></li></ol></li></ol></li></ol>
         
         </div>
       </aside>
@@ -462,7 +528,7 @@ Redis可以使用两种方式实现持久化过程。定时快照（snapshot）�
 
                 </ul>
                 <p class="copyright text-muted">
-                    Copyright &copy; LHTon 2019 
+                    Copyright &copy; LHTon 2020 
                     <br>
                     Theme by <a href="http://huangxuan.me">Hux</a> 
                     <span style="display: inline-block; margin: 0 5px;">
